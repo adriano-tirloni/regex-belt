@@ -1,0 +1,47 @@
+{
+  "name": "regex-belt",
+  "description": "A collection of commonly used regular expressions, organized by category.",
+  "repository": {
+    "url": "git+https://github.com/adriano-tirloni/regexbelt.git"
+  },
+  "keywords": [
+    "regex",
+    "regexp",
+    "patterns",
+    "validation"
+  ],
+  "version": "0.0.0",
+  "sideEffects": false,
+  "type": "module",
+  "author": "Adriano Tirloni",
+  "license": "MIT",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
+  "exports": {
+    ".": {
+      "types": {
+        "import": "./dist/index.d.mts",
+        "require": "./dist/index.d.cts"
+      },
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "lint": "biome check .",
+    "type-check": "tsc --noEmit",
+    "test": "vitest run",
+    "build": "tsdown"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.4.8",
+    "tsdown": "^0.21.4",
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.0"
+  },
+  "packageManager": "pnpm@10.32.1"
+}
