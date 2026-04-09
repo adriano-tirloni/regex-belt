@@ -57,7 +57,8 @@ countries.br.contact.phone.test('+55 11 91234-5678'); // true
 
 Every regex is a plain `RegExp` literal — use `.test()`, `.match()`, or `.exec()` as you normally would.
 
-## Contributing
+<details>
+<summary><h2>Contributing</h2></summary>
 
 ### Adding a new regex
 
@@ -133,6 +134,9 @@ pnpm check-all   # Run all checks before it can be published
 #### 6. Open a PR
 That's it
 
+</details>
+
+## Available REGEXEN
 <!-- GENERATED:START - Do not edit below this line -->
 
 ### Datetime
