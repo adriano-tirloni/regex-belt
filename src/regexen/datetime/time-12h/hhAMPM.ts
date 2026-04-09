@@ -7,4 +7,4 @@
  * @example ❌ '0 AM'
  * @example ❌ '13 PM'
  */
-export const hh = /^(?:0?[1-9]|1[0-2])\s?[AaPp][Mm]$/;
+export const hhAMPM = /^(?:0?[1-9]|1[0-2])\s?[AaPp][Mm]$/;

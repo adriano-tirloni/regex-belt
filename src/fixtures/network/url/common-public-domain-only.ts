@@ -1,5 +1,5 @@
 /** Valid common public domain-only URLs */
-export const validUrlCommonPublicDomainOnly = {
+export const validCommonPublicDomainOnly = {
   /** HTTPS */
   https: 'https://example.com',
   /** HTTP */
@@ -11,7 +11,7 @@ export const validUrlCommonPublicDomainOnly = {
 };
 
 /** Invalid common public domain-only URLs */
-export const invalidUrlCommonPublicDomainOnly = {
+export const invalidCommonPublicDomainOnly = {
   /** Has path */
   hasPath: 'https://example.com/path',
   /** Has port */

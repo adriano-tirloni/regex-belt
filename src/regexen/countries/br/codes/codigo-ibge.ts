@@ -5,4 +5,4 @@
  * @example ✅ '3550308'
  * @example ❌ '355030'
  */
-export const ibgeCode = /^\d{7}$/;
+export const codigoIbge = /^\d{7}$/;

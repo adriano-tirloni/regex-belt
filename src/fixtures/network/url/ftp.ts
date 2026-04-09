@@ -1,5 +1,5 @@
 /** Valid FTP URLs */
-export const validUrlFtp = {
+export const validFtp = {
   /** Simple */
   simple: 'ftp://files.example.com',
   /** With credentials */
@@ -9,7 +9,7 @@ export const validUrlFtp = {
 };
 
 /** Invalid FTP URLs */
-export const invalidUrlFtp = {
+export const invalidFtp = {
   /** HTTPS scheme */
   https: 'https://example.com',
   /** HTTP scheme */

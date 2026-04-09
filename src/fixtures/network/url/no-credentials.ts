@@ -1,5 +1,5 @@
 /** Valid URLs without credentials */
-export const validUrlNoCredentials = {
+export const validNoCredentials = {
   /** Simple HTTPS */
   httpsSimple: 'https://example.com',
   /** With port and path */
@@ -11,7 +11,7 @@ export const validUrlNoCredentials = {
 };
 
 /** Invalid URLs (have credentials or missing scheme) */
-export const invalidUrlNoCredentials = {
+export const invalidNoCredentials = {
   /** Has credentials */
   hasCreds: 'https://user:pass@example.com',
   /** Has user-only credentials */

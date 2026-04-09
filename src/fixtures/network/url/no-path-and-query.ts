@@ -1,5 +1,5 @@
 /** Valid URLs without path or query */
-export const validUrlNoPathAndQuery = {
+export const validNoPathAndQuery = {
   /** Simple HTTPS */
   httpsSimple: 'https://example.com',
   /** With credentials and port */
@@ -11,7 +11,7 @@ export const validUrlNoPathAndQuery = {
 };
 
 /** Invalid URLs (have path or query) */
-export const invalidUrlNoPathAndQuery = {
+export const invalidNoPathAndQuery = {
   /** Has path */
   hasPath: 'https://example.com/path',
   /** Has query */

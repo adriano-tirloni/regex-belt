@@ -1,5 +1,5 @@
 /** Valid NFe access keys (44 digits) */
-export const validNfeKey = {
+export const validChaveNfe = {
   /** Standard 44-digit NFe key */
   standard: '35210612345678000195550010001234561123456784',
   /** All zeros — structurally valid */
@@ -9,7 +9,7 @@ export const validNfeKey = {
 };
 
 /** Invalid NFe key strings */
-export const invalidNfeKey = {
+export const invalidChaveNfe = {
   /** Too short — 43 digits */
   tooShort: '3521061234567800019555001000123456112345678',
   /** Too long — 45 digits */

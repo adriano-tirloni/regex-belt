@@ -1,5 +1,5 @@
 /** Valid URL slugs */
-export const validUrlSlug = {
+export const validSlug = {
   /** Simple words */
   simpleWords: 'my-page-title',
   /** Numeric */
@@ -13,7 +13,7 @@ export const validUrlSlug = {
 };
 
 /** Invalid URL slugs */
-export const invalidUrlSlug = {
+export const invalidSlug = {
   /** Has spaces */
   hasSpaces: 'my page',
   /** Uppercase */

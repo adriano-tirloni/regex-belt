@@ -1,16 +1,16 @@
 import { describe, expect, it } from 'vitest';
 import {
-  invalidProfessionalRegistration,
-  validProfessionalRegistration,
-} from '../../../../fixtures/countries/br/codes/professional-registration.ts';
-import { professionalRegistration } from './professional-registration.ts';
+  invalidRegistroProfissional,
+  validRegistroProfissional,
+} from '../../../../fixtures/countries/br/codes/registro-profissional.ts';
+import { registroProfissional } from './registro-profissional.ts';
 
-describe('professionalRegistration', () => {
-  it.each(Object.entries(validProfessionalRegistration))('%s: %s', (_, value) => {
-    expect(professionalRegistration.test(value)).toBe(true);
+describe('registroProfissional', () => {
+  it.each(Object.entries(validRegistroProfissional))('%s: %s', (_, value) => {
+    expect(registroProfissional.test(value)).toBe(true);
   });
 
-  it.each(Object.entries(invalidProfessionalRegistration))('%s: %s', (_, value) => {
-    expect(professionalRegistration.test(value)).toBe(false);
+  it.each(Object.entries(invalidRegistroProfissional))('%s: %s', (_, value) => {
+    expect(registroProfissional.test(value)).toBe(false);
   });
 });

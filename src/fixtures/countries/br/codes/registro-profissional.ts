@@ -1,5 +1,5 @@
 /** Valid Brazilian professional registration numbers */
-export const validProfessionalRegistration = {
+export const validRegistroProfissional = {
   /** CREA engineering registration */
   crea: 'CREA123456SP',
   /** CRO dental registration with space and slash */
@@ -11,7 +11,7 @@ export const validProfessionalRegistration = {
 };
 
 /** Invalid professional registration strings */
-export const invalidProfessionalRegistration = {
+export const invalidRegistroProfissional = {
   /** Missing CR prefix */
   noCrPrefix: 'EA123456SP',
   /** Lowercase letters */

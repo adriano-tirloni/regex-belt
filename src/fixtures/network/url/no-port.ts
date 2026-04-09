@@ -1,5 +1,5 @@
 /** Valid URLs without port */
-export const validUrlNoPort = {
+export const validNoPort = {
   /** Simple HTTPS */
   httpsSimple: 'https://example.com',
   /** With credentials and path */
@@ -11,7 +11,7 @@ export const validUrlNoPort = {
 };
 
 /** Invalid URLs (have port or missing scheme) */
-export const invalidUrlNoPort = {
+export const invalidNoPort = {
   /** Has port */
   hasPort: 'https://example.com:8080',
   /** Has port with path */

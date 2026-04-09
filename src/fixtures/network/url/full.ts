@@ -1,5 +1,5 @@
 /** Valid full URLs */
-export const validUrlFull = {
+export const validFull = {
   /** HTTPS with all components */
   httpsAll: 'https://user:pass@example.com:8080/path/to/page?q=1&r=2#section',
   /** Simple HTTPS */
@@ -19,7 +19,7 @@ export const validUrlFull = {
 };
 
 /** Invalid full URLs */
-export const invalidUrlFull = {
+export const invalidFull = {
   /** Missing scheme */
   noScheme: 'example.com',
   /** Protocol-relative */

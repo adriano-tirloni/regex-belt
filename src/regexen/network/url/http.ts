@@ -11,7 +11,7 @@ import { _$_buildUrlRegex, _$_scheme } from './_helpers.ts';
  * @example ❌ 'https://example.com'
  * @example ❌ 'ftp://files.example.com'
  */
-export const urlHttp = _$_buildUrlRegex({
+export const http = _$_buildUrlRegex({
   scheme: _$_scheme.http,
   credentials: true,
   port: true,

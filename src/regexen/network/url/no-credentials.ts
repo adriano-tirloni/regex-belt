@@ -10,7 +10,7 @@ import { _$_buildUrlRegex, _$_scheme } from './_helpers.ts';
  * @example ✅ 'http://example.com'
  * @example ❌ 'https://user:pass@example.com'
  */
-export const urlNoCredentials = _$_buildUrlRegex({
+export const noCredentials = _$_buildUrlRegex({
   scheme: _$_scheme.any,
   port: true,
   path: true,

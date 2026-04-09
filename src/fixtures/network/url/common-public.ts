@@ -1,5 +1,5 @@
 /** Valid common public URLs */
-export const validUrlCommonPublic = {
+export const validCommonPublic = {
   /** Simple HTTPS */
   httpsSimple: 'https://example.com',
   /** HTTP with path */
@@ -11,7 +11,7 @@ export const validUrlCommonPublic = {
 };
 
 /** Invalid common public URLs */
-export const invalidUrlCommonPublic = {
+export const invalidCommonPublic = {
   /** FTP scheme */
   ftp: 'ftp://files.example.com',
   /** Has credentials */

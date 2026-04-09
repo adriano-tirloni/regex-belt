@@ -1,13 +1,13 @@
 import { describe, expect, it } from 'vitest';
-import { invalidUrlFull, validUrlFull } from '../../../fixtures/network/url/full.ts';
-import { urlFull } from './full.ts';
+import { invalidFull, validFull } from '../../../fixtures/network/url/full.ts';
+import { full } from './full.ts';
 
-describe('urlFull', () => {
-  it.each(Object.entries(validUrlFull))('%s: %s', (_, value) => {
-    expect(urlFull.test(value)).toBe(true);
+describe('full', () => {
+  it.each(Object.entries(validFull))('%s: %s', (_, value) => {
+    expect(full.test(value)).toBe(true);
   });
 
-  it.each(Object.entries(invalidUrlFull))('%s: %s', (_, value) => {
-    expect(urlFull.test(value)).toBe(false);
+  it.each(Object.entries(invalidFull))('%s: %s', (_, value) => {
+    expect(full.test(value)).toBe(false);
   });
 });

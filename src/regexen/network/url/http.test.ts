@@ -1,13 +1,13 @@
 import { describe, expect, it } from 'vitest';
-import { invalidUrlHttp, validUrlHttp } from '../../../fixtures/network/url/http.ts';
-import { urlHttp } from './http.ts';
+import { invalidHttp, validHttp } from '../../../fixtures/network/url/http.ts';
+import { http } from './http.ts';
 
-describe('urlHttp', () => {
-  it.each(Object.entries(validUrlHttp))('%s: %s', (_, value) => {
-    expect(urlHttp.test(value)).toBe(true);
+describe('http', () => {
+  it.each(Object.entries(validHttp))('%s: %s', (_, value) => {
+    expect(http.test(value)).toBe(true);
   });
 
-  it.each(Object.entries(invalidUrlHttp))('%s: %s', (_, value) => {
-    expect(urlHttp.test(value)).toBe(false);
+  it.each(Object.entries(invalidHttp))('%s: %s', (_, value) => {
+    expect(http.test(value)).toBe(false);
   });
 });

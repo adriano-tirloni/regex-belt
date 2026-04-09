@@ -1,13 +1,13 @@
 import { describe, expect, it } from 'vitest';
-import { invalidUrlFtp, validUrlFtp } from '../../../fixtures/network/url/ftp.ts';
-import { urlFtp } from './ftp.ts';
+import { invalidFtp, validFtp } from '../../../fixtures/network/url/ftp.ts';
+import { ftp } from './ftp.ts';
 
-describe('urlFtp', () => {
-  it.each(Object.entries(validUrlFtp))('%s: %s', (_, value) => {
-    expect(urlFtp.test(value)).toBe(true);
+describe('ftp', () => {
+  it.each(Object.entries(validFtp))('%s: %s', (_, value) => {
+    expect(ftp.test(value)).toBe(true);
   });
 
-  it.each(Object.entries(invalidUrlFtp))('%s: %s', (_, value) => {
-    expect(urlFtp.test(value)).toBe(false);
+  it.each(Object.entries(invalidFtp))('%s: %s', (_, value) => {
+    expect(ftp.test(value)).toBe(false);
   });
 });

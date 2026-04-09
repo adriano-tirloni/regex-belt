@@ -10,7 +10,7 @@ import { _$_buildUrlRegex, _$_scheme } from './_helpers.ts';
  * @example ✅ 'http://example.com'
  * @example ❌ 'https://example.com:8080'
  */
-export const urlNoPort = _$_buildUrlRegex({
+export const noPort = _$_buildUrlRegex({
   scheme: _$_scheme.any,
   credentials: true,
   path: true,

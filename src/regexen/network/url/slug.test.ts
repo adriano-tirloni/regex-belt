@@ -1,13 +1,13 @@
 import { describe, expect, it } from 'vitest';
-import { invalidUrlSlug, validUrlSlug } from '../../../fixtures/network/url/slug.ts';
-import { urlSlug } from './slug.ts';
+import { invalidSlug, validSlug } from '../../../fixtures/network/url/slug.ts';
+import { slug } from './slug.ts';
 
-describe('urlSlug', () => {
-  it.each(Object.entries(validUrlSlug))('%s: %s', (_, value) => {
-    expect(urlSlug.test(value)).toBe(true);
+describe('slug', () => {
+  it.each(Object.entries(validSlug))('%s: %s', (_, value) => {
+    expect(slug.test(value)).toBe(true);
   });
 
-  it.each(Object.entries(invalidUrlSlug))('%s: %s', (_, value) => {
-    expect(urlSlug.test(value)).toBe(false);
+  it.each(Object.entries(invalidSlug))('%s: %s', (_, value) => {
+    expect(slug.test(value)).toBe(false);
   });
 });

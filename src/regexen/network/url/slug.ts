@@ -9,4 +9,4 @@
  * @example ❌ 'UPPERCASE'
  * @example ❌ 'has_underscore'
  */
-export const urlSlug = /^[a-z0-9-]+$/;
+export const slug = /^[a-z0-9-]+$/;

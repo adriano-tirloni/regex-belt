@@ -1,16 +1,16 @@
 import { describe, expect, it } from 'vitest';
 import {
-  invalidUrlCommonPublic,
-  validUrlCommonPublic,
+  invalidCommonPublic,
+  validCommonPublic,
 } from '../../../fixtures/network/url/common-public.ts';
-import { urlCommonPublic } from './common-public.ts';
+import { commonPublic } from './common-public.ts';
 
-describe('urlCommonPublic', () => {
-  it.each(Object.entries(validUrlCommonPublic))('%s: %s', (_, value) => {
-    expect(urlCommonPublic.test(value)).toBe(true);
+describe('commonPublic', () => {
+  it.each(Object.entries(validCommonPublic))('%s: %s', (_, value) => {
+    expect(commonPublic.test(value)).toBe(true);
   });
 
-  it.each(Object.entries(invalidUrlCommonPublic))('%s: %s', (_, value) => {
-    expect(urlCommonPublic.test(value)).toBe(false);
+  it.each(Object.entries(invalidCommonPublic))('%s: %s', (_, value) => {
+    expect(commonPublic.test(value)).toBe(false);
   });
 });

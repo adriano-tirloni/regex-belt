@@ -7,4 +7,4 @@
  * @example ✅ 'CREA123456SP'
  * @example ❌ 'crea123456sp'
  */
-export const professionalRegistration = /^CR[A-Z]{1,3}\s?\d{4,10}[/-]?[A-Z]{2}$/;
+export const registroProfissional = /^CR[A-Z]{1,3}\s?\d{4,10}[/-]?[A-Z]{2}$/;

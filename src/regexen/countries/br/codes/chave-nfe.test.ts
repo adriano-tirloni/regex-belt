@@ -1,13 +1,16 @@
 import { describe, expect, it } from 'vitest';
-import { invalidNfeKey, validNfeKey } from '../../../../fixtures/countries/br/codes/nfe-key.ts';
-import { nfeKey } from './nfe-key.ts';
+import {
+  invalidChaveNfe,
+  validChaveNfe,
+} from '../../../../fixtures/countries/br/codes/chave-nfe.ts';
+import { chaveNfe } from './chave-nfe.ts';
 
-describe('nfeKey', () => {
-  it.each(Object.entries(validNfeKey))('%s: %s', (_, value) => {
-    expect(nfeKey.test(value)).toBe(true);
+describe('chaveNfe', () => {
+  it.each(Object.entries(validChaveNfe))('%s: %s', (_, value) => {
+    expect(chaveNfe.test(value)).toBe(true);
   });
 
-  it.each(Object.entries(invalidNfeKey))('%s: %s', (_, value) => {
-    expect(nfeKey.test(value)).toBe(false);
+  it.each(Object.entries(invalidChaveNfe))('%s: %s', (_, value) => {
+    expect(chaveNfe.test(value)).toBe(false);
   });
 });

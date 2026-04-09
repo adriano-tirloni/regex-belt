@@ -1,16 +1,16 @@
 import { describe, expect, it } from 'vitest';
 import {
-  invalidUrlCommonPublicDomainOnly,
-  validUrlCommonPublicDomainOnly,
+  invalidCommonPublicDomainOnly,
+  validCommonPublicDomainOnly,
 } from '../../../fixtures/network/url/common-public-domain-only.ts';
-import { urlCommonPublicDomainOnly } from './common-public-domain-only.ts';
+import { commonPublicDomainOnly } from './common-public-domain-only.ts';
 
-describe('urlCommonPublicDomainOnly', () => {
-  it.each(Object.entries(validUrlCommonPublicDomainOnly))('%s: %s', (_, value) => {
-    expect(urlCommonPublicDomainOnly.test(value)).toBe(true);
+describe('commonPublicDomainOnly', () => {
+  it.each(Object.entries(validCommonPublicDomainOnly))('%s: %s', (_, value) => {
+    expect(commonPublicDomainOnly.test(value)).toBe(true);
   });
 
-  it.each(Object.entries(invalidUrlCommonPublicDomainOnly))('%s: %s', (_, value) => {
-    expect(urlCommonPublicDomainOnly.test(value)).toBe(false);
+  it.each(Object.entries(invalidCommonPublicDomainOnly))('%s: %s', (_, value) => {
+    expect(commonPublicDomainOnly.test(value)).toBe(false);
   });
 });

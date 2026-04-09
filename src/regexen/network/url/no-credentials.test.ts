@@ -1,16 +1,16 @@
 import { describe, expect, it } from 'vitest';
 import {
-  invalidUrlNoCredentials,
-  validUrlNoCredentials,
+  invalidNoCredentials,
+  validNoCredentials,
 } from '../../../fixtures/network/url/no-credentials.ts';
-import { urlNoCredentials } from './no-credentials.ts';
+import { noCredentials } from './no-credentials.ts';
 
-describe('urlNoCredentials', () => {
-  it.each(Object.entries(validUrlNoCredentials))('%s: %s', (_, value) => {
-    expect(urlNoCredentials.test(value)).toBe(true);
+describe('noCredentials', () => {
+  it.each(Object.entries(validNoCredentials))('%s: %s', (_, value) => {
+    expect(noCredentials.test(value)).toBe(true);
   });
 
-  it.each(Object.entries(invalidUrlNoCredentials))('%s: %s', (_, value) => {
-    expect(urlNoCredentials.test(value)).toBe(false);
+  it.each(Object.entries(invalidNoCredentials))('%s: %s', (_, value) => {
+    expect(noCredentials.test(value)).toBe(false);
   });
 });

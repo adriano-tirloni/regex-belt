@@ -12,6 +12,6 @@ import { _$_buildUrlRegex, _$_scheme } from './_helpers.ts';
  * @example ❌ 'http://example.com'
  * @example ❌ 'https://example.com:443'
  */
-export const urlHttpsDomainOnly = _$_buildUrlRegex({
+export const httpsDomainOnly = _$_buildUrlRegex({
   scheme: _$_scheme.https,
 });

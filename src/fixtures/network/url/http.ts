@@ -1,5 +1,5 @@
 /** Valid HTTP URLs */
-export const validUrlHttp = {
+export const validHttp = {
   /** Simple */
   simple: 'http://example.com',
   /** All components */
@@ -9,7 +9,7 @@ export const validUrlHttp = {
 };
 
 /** Invalid HTTP URLs */
-export const invalidUrlHttp = {
+export const invalidHttp = {
   /** HTTPS scheme */
   https: 'https://example.com',
   /** FTP scheme */

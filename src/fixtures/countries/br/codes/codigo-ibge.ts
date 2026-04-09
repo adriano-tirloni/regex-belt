@@ -1,5 +1,5 @@
 /** Valid IBGE municipality codes (7 digits) */
-export const validIbgeCode = {
+export const validCodigoIbge = {
   /** Sao Paulo */
   saoPaulo: '3550308',
   /** Porto Velho */
@@ -9,7 +9,7 @@ export const validIbgeCode = {
 };
 
 /** Invalid IBGE code strings */
-export const invalidIbgeCode = {
+export const invalidCodigoIbge = {
   /** Too few digits */
   tooShort: '355030',
   /** Too many digits */

@@ -1,5 +1,5 @@
 /** Valid HTTPS domain-only URLs */
-export const validUrlHttpsDomainOnly = {
+export const validHttpsDomainOnly = {
   /** Simple */
   simple: 'https://example.com',
   /** Subdomain */
@@ -9,7 +9,7 @@ export const validUrlHttpsDomainOnly = {
 };
 
 /** Invalid HTTPS domain-only URLs */
-export const invalidUrlHttpsDomainOnly = {
+export const invalidHttpsDomainOnly = {
   /** Has path */
   hasPath: 'https://example.com/path',
   /** Has port */

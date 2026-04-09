@@ -12,6 +12,6 @@ import { _$_buildUrlRegex, _$_scheme } from './_helpers.ts';
  * @example ❌ 'https://example.com:8080'
  * @example ❌ 'ftp://files.example.com'
  */
-export const urlCommonPublicDomainOnly = _$_buildUrlRegex({
+export const commonPublicDomainOnly = _$_buildUrlRegex({
   scheme: _$_scheme.httpOrHttps,
 });

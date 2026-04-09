@@ -1,13 +1,16 @@
 import { describe, expect, it } from 'vitest';
-import { invalidTime12hhmmss, validTime12hhmmss } from '../../../fixtures/datetime/time-12h.ts';
-import { hhmmss } from './hhmmss.ts';
+import {
+  invalidTime12hhmmssAMPM,
+  validTime12hhmmssAMPM,
+} from '../../../fixtures/datetime/time-12h.ts';
+import { hhmmssAMPM } from './hhmmssAMPM.ts';
 
-describe('hhmmss', () => {
-  it.each(Object.entries(validTime12hhmmss))('%s: %s', (_, value) => {
-    expect(hhmmss.test(value)).toBe(true);
+describe('hhmmssAMPM', () => {
+  it.each(Object.entries(validTime12hhmmssAMPM))('%s: %s', (_, value) => {
+    expect(hhmmssAMPM.test(value)).toBe(true);
   });
 
-  it.each(Object.entries(invalidTime12hhmmss))('%s: %s', (_, value) => {
-    expect(hhmmss.test(value)).toBe(false);
+  it.each(Object.entries(invalidTime12hhmmssAMPM))('%s: %s', (_, value) => {
+    expect(hhmmssAMPM.test(value)).toBe(false);
   });
 });

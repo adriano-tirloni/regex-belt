@@ -12,7 +12,7 @@ import { _$_buildUrlRegex, _$_scheme } from './_helpers.ts';
  * @example ❌ 'example.com'
  * @example ❌ '//example.com'
  */
-export const urlFull = _$_buildUrlRegex({
+export const full = _$_buildUrlRegex({
   scheme: _$_scheme.any,
   credentials: true,
   port: true,

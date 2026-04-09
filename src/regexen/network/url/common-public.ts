@@ -11,7 +11,7 @@ import { _$_buildUrlRegex, _$_scheme } from './_helpers.ts';
  * @example ❌ 'https://user:pass@example.com'
  * @example ❌ 'ftp://files.example.com'
  */
-export const urlCommonPublic = _$_buildUrlRegex({
+export const commonPublic = _$_buildUrlRegex({
   scheme: _$_scheme.httpOrHttps,
   port: true,
   path: true,

@@ -1,16 +1,16 @@
 import { describe, expect, it } from 'vitest';
 import {
-  invalidUrlHttpsDomainOnly,
-  validUrlHttpsDomainOnly,
+  invalidHttpsDomainOnly,
+  validHttpsDomainOnly,
 } from '../../../fixtures/network/url/https-domain-only.ts';
-import { urlHttpsDomainOnly } from './https-domain-only.ts';
+import { httpsDomainOnly } from './https-domain-only.ts';
 
-describe('urlHttpsDomainOnly', () => {
-  it.each(Object.entries(validUrlHttpsDomainOnly))('%s: %s', (_, value) => {
-    expect(urlHttpsDomainOnly.test(value)).toBe(true);
+describe('httpsDomainOnly', () => {
+  it.each(Object.entries(validHttpsDomainOnly))('%s: %s', (_, value) => {
+    expect(httpsDomainOnly.test(value)).toBe(true);
   });
 
-  it.each(Object.entries(invalidUrlHttpsDomainOnly))('%s: %s', (_, value) => {
-    expect(urlHttpsDomainOnly.test(value)).toBe(false);
+  it.each(Object.entries(invalidHttpsDomainOnly))('%s: %s', (_, value) => {
+    expect(httpsDomainOnly.test(value)).toBe(false);
   });
 });
