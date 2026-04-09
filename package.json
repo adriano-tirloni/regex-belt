@@ -2,7 +2,7 @@
   "name": "regex-belt",
   "description": "A collection of commonly used regular expressions, organized by category.",
   "repository": {
-    "url": "git+https://github.com/adriano-tirloni/regexbelt.git"
+    "url": "git+https://github.com/adriano-tirloni/regex-belt.git"
   },
   "keywords": [
     "regex",
