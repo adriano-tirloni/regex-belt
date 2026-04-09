@@ -1,1 +1,1 @@
-export * from './cpf.ts';
+export * as documents from './documents/_index.ts';

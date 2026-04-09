@@ -14,30 +14,12 @@ npm install regex-belt
 import { datetime, countries } from 'regex-belt';
 
 datetime.dashedDate.test('2022-12-31'); // true
-countries.br.cpf.test('123.456.789-09'); // true
+countries.br.documents.cpf.test('123.456.789-09'); // true
 ```
 
 <!-- GENERATED:START - Do not edit below this line -->
-## Patterns
 
-### Countries / BR
-
-[**`cpf`**](./src/regexen/countries/br/cpf.ts) — `✅ '123.456.789-09'` — Matches a Brazilian CPF number in the format XXX.XXX.XXX-XX *(Enforces beginning and end of string)*
-
-```regex
-/^\d{3}\.\d{3}\.\d{3}-\d{2}$/
-```
-
-<details><summary>Examples</summary>
-
-| Input | Match |
-|:------|:-----:|
-| `123.456.789-09` | ✅ |
-| `12345678909` | ❌ |
-
-</details>
-
-### Datetime
+## Datetime
 
 [**`dashedDateLoose`**](./src/regexen/datetime/dashed-date-loose.ts) — `✅ '2022-12-31'` — Matches a date in the format YYYY-MM-DD Valid digits are 0000 to 9999 for year, 01 to 12 for month and 01 to 31 for day *(Does not enforce beginning and end of string)*
 
@@ -87,6 +69,23 @@ countries.br.cpf.test('123.456.789-09'); // true
 |:------|:-----:|
 | `2022-12-31T23:59:59.999Z` | ✅ |
 | `2022-12-31T23:59:59Z` | ✅ |
+
+</details>
+
+## Countries / BR / Documents
+
+[**`cpf`**](./src/regexen/countries/br/documents/cpf.ts) — `✅ '123.456.789-09'` — Matches a Brazilian CPF number in the format XXX.XXX.XXX-XX *(Enforces beginning and end of string)*
+
+```regex
+/^\d{3}\.\d{3}\.\d{3}-\d{2}$/
+```
+
+<details><summary>Examples</summary>
+
+| Input | Match |
+|:------|:-----:|
+| `123.456.789-09` | ✅ |
+| `12345678909` | ❌ |
 
 </details>
 

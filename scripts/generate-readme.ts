@@ -186,8 +186,15 @@ function buildEntryBlock(entry: RegexEntry): string[] {
 // Build the dynamic section
 const dynamicLines: string[] = [];
 
-for (const [category, categoryEntries] of grouped) {
-  dynamicLines.push(`### ${formatCategoryTitle(category)}`);
+const sortedGroups = [...grouped.entries()].sort((a, b) => {
+  const aIsCountry = a[0].startsWith('countries');
+  const bIsCountry = b[0].startsWith('countries');
+  if (aIsCountry !== bIsCountry) return aIsCountry ? 1 : -1;
+  return a[0].localeCompare(b[0]);
+});
+
+for (const [category, categoryEntries] of sortedGroups) {
+  dynamicLines.push(`## ${formatCategoryTitle(category)}`);
   dynamicLines.push('');
 
   for (let i = 0; i < categoryEntries.length; i++) {
@@ -217,11 +224,10 @@ npm install regex-belt
 import { datetime, countries } from 'regex-belt';
 
 datetime.dashedDate.test('2022-12-31'); // true
-countries.br.cpf.test('123.456.789-09'); // true
+countries.br.documents.cpf.test('123.456.789-09'); // true
 \`\`\`
 
 <!-- GENERATED:START - Do not edit below this line -->
-## Patterns
 
 ${dynamicLines.join('\n')}
 <!-- GENERATED:END -->

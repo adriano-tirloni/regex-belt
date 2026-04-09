@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { invalidCpf, validCpf } from '../../../fixtures/countries/br/cpf.ts';
+import { invalidCpf, validCpf } from '../../../../fixtures/countries/br/documents/cpf.ts';
 import { cpf } from './cpf.ts';
 
 describe('cpf', () => {
