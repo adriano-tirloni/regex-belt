@@ -142,42 +142,37 @@ const entries = files.map(parseRegexFile).filter((entry): entry is RegexEntry =>
 const grouped = groupByCategory(entries);
 
 /**
- * Builds an HTML table with a pattern row spanning full width below each entry
+ * Builds a markdown block for a single regex entry
  */
-function buildHtmlTable(categoryEntries: RegexEntry[]): string[] {
+function buildEntryBlock(entry: RegexEntry): string[] {
   const lines: string[] = [];
 
-  lines.push('<table>');
+  // Line 1: bold linked name => first matching example + description
+  const firstMatch = entry.examples.find(e => e.matches);
+  const quickRef = firstMatch ? ` \`✅ '${firstMatch.value}'\` —` : '';
+  lines.push(`[**\`${entry.name}\`**](./${entry.filePath}) —${quickRef} ${entry.description}`);
+  lines.push('');
 
-  for (const entry of categoryEntries) {
-    lines.push('<tr>');
-    lines.push(`  <td><b><a href="./${entry.filePath}"><code>${entry.name}</code></a></b></td>`);
-    lines.push(`  <td>${entry.description}</td>`);
-    lines.push('</tr>');
+  // Line 2: regex pattern
+  lines.push('```regex');
+  lines.push(entry.pattern);
+  lines.push('```');
+  lines.push('');
 
-    // Examples accordion
-    if (entry.examples.length > 0) {
-      lines.push('<tr>');
-      lines.push('  <td colspan="2">');
-      lines.push('    <details><summary>Examples</summary>');
-      lines.push('');
-      for (const example of entry.examples) {
-        const icon = example.matches ? ':white_check_mark:' : ':x:';
-        lines.push(`    ${icon} \`${example.value}\``);
-        lines.push('');
-      }
-      lines.push('    </details>');
-      lines.push('  </td>');
-      lines.push('</tr>');
+  // Line 3: examples accordion
+  if (entry.examples.length > 0) {
+    lines.push('<details><summary>Examples</summary>');
+    lines.push('');
+    lines.push('| Input | Match |');
+    lines.push('|:------|:-----:|');
+    for (const example of entry.examples) {
+      const icon = example.matches ? '✅' : '❌';
+      lines.push(`| \`${example.value}\` | ${icon} |`);
     }
-
-    // Regex pattern with syntax highlighting
-    lines.push('<tr>');
-    lines.push(`  <td colspan="2"><pre lang="javascript"><code>${entry.pattern}</code></pre></td>`);
-    lines.push('</tr>');
+    lines.push('');
+    lines.push('</details>');
   }
 
-  lines.push('</table>');
   return lines;
 }
 
@@ -187,8 +182,15 @@ const dynamicLines: string[] = [];
 for (const [category, categoryEntries] of grouped) {
   dynamicLines.push(`### ${formatCategoryTitle(category)}`);
   dynamicLines.push('');
-  dynamicLines.push(...buildHtmlTable(categoryEntries));
-  dynamicLines.push('');
+
+  for (let i = 0; i < categoryEntries.length; i++) {
+    dynamicLines.push(...buildEntryBlock(categoryEntries[i]));
+    dynamicLines.push('');
+    if (i < categoryEntries.length - 1) {
+      dynamicLines.push('---');
+      dynamicLines.push('');
+    }
+  }
 }
 
 // Static header
