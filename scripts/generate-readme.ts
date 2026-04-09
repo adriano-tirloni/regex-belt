@@ -73,19 +73,23 @@ function parseRegexFile(filePath: string): RegexEntry | null {
     .filter(line => line.startsWith('___'))
     .map(line => line.replace(/^_+|_+$/g, ''));
 
-  // Extract @example tags and parse match status
+  // Extract and validate @example tags — expected format: @example ✅|❌ value
   const examples: ExampleEntry[] = [];
   for (const match of jsdocBlock.matchAll(/@example\s+(.+)/g)) {
     const raw = match[1].trim();
-    const parsed = raw.match(/^(['"]?)(.+?)\1\s*\((.+)\)$/);
+    const parsed = raw.match(/^([✅❌])\s+['"]?(.+?)['"]?$/);
 
-    if (parsed) {
-      const note = parsed[3];
-      const isExplicitNoMatch = /does not match/i.test(note);
-      examples.push({ value: parsed[2], matches: !isExplicitNoMatch, note });
-    } else {
-      examples.push({ value: raw, matches: true, note: '' });
+    if (!parsed) {
+      throw new Error(
+        `Invalid @example format in ${filePath}:\n  @example ${raw}\n  Expected: @example ✅|❌ <value>`,
+      );
     }
+
+    examples.push({
+      value: parsed[2],
+      matches: parsed[1] === '✅',
+      note: '',
+    });
   }
 
   // Extract export const name = /pattern/
@@ -150,7 +154,10 @@ function buildEntryBlock(entry: RegexEntry): string[] {
   // Line 1: bold linked name => first matching example + description
   const firstMatch = entry.examples.find(e => e.matches);
   const quickRef = firstMatch ? ` \`✅ '${firstMatch.value}'\` —` : '';
-  lines.push(`[**\`${entry.name}\`**](./${entry.filePath}) —${quickRef} ${entry.description}`);
+  const notesSuffix = entry.notes.length > 0 ? ` *(${entry.notes.join(', ')})*` : '';
+  lines.push(
+    `[**\`${entry.name}\`**](./${entry.filePath}) —${quickRef} ${entry.description}${notesSuffix}`,
+  );
   lines.push('');
 
   // Line 2: regex pattern
