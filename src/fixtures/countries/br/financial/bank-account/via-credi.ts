@@ -1,5 +1,5 @@
 /** Valid ViaCredi account formats (XXXX XXXXXXXXXXX-D) */
-export const validBankAccountViaCredi = {
+export const validViaCredi = {
   /** Standard account with numeric check digit */
   standard: '1234 12345678901-2',
   /** Account with X check digit */
@@ -9,7 +9,7 @@ export const validBankAccountViaCredi = {
 };
 
 /** Invalid ViaCredi account strings */
-export const invalidBankAccountViaCredi = {
+export const invalidViaCredi = {
   /** Account number too short (10 digits) */
   shortAccount: '1234 1234567890-2',
   /** Agency too long (5 digits) */

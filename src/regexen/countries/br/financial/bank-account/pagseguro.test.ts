@@ -1,16 +1,16 @@
 import { describe, expect, it } from 'vitest';
 import {
-  invalidBankAccountPagseguro,
-  validBankAccountPagseguro,
+  invalidPagseguro,
+  validPagseguro,
 } from '../../../../../fixtures/countries/br/financial/bank-account/pagseguro.ts';
-import { bankAccountPagseguro } from './pagseguro.ts';
+import { pagseguro } from './pagseguro.ts';
 
-describe('bankAccountPagseguro', () => {
-  it.each(Object.entries(validBankAccountPagseguro))('%s: %s', (_, value) => {
-    expect(bankAccountPagseguro.test(value)).toBe(true);
+describe('pagseguro', () => {
+  it.each(Object.entries(validPagseguro))('%s: %s', (_, value) => {
+    expect(pagseguro.test(value)).toBe(true);
   });
 
-  it.each(Object.entries(invalidBankAccountPagseguro))('%s: %s', (_, value) => {
-    expect(bankAccountPagseguro.test(value)).toBe(false);
+  it.each(Object.entries(invalidPagseguro))('%s: %s', (_, value) => {
+    expect(pagseguro.test(value)).toBe(false);
   });
 });

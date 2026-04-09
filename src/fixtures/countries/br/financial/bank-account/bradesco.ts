@@ -1,5 +1,5 @@
 /** Valid Bradesco account formats (XXXX-D XXXXXXX-D) */
-export const validBankAccountBradesco = {
+export const validBradesco = {
   /** Standard account with numeric check digits */
   standard: '1234-5 1234567-8',
   /** Account with X check digit on agency */
@@ -9,7 +9,7 @@ export const validBankAccountBradesco = {
 };
 
 /** Invalid Bradesco account strings */
-export const invalidBankAccountBradesco = {
+export const invalidBradesco = {
   /** Account number too long (8 digits) */
   longAccount: '1234-5 12345678-9',
   /** Agency too long (5 digits) */

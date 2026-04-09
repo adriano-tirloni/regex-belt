@@ -1,5 +1,5 @@
 /** Valid Itau account formats (XXXX XXXXX-D) */
-export const validBankAccountItau = {
+export const validItau = {
   /** Standard account with numeric check digit */
   standard: '1234 12345-6',
   /** Account with X check digit */
@@ -9,7 +9,7 @@ export const validBankAccountItau = {
 };
 
 /** Invalid Itau account strings */
-export const invalidBankAccountItau = {
+export const invalidItau = {
   /** Account number too long (6 digits) */
   longAccount: '1234 123456-7',
   /** Agency with check digit */

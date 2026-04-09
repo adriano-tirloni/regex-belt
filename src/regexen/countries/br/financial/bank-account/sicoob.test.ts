@@ -1,16 +1,16 @@
 import { describe, expect, it } from 'vitest';
 import {
-  invalidBankAccountSicoob,
-  validBankAccountSicoob,
+  invalidSicoob,
+  validSicoob,
 } from '../../../../../fixtures/countries/br/financial/bank-account/sicoob.ts';
-import { bankAccountSicoob } from './sicoob.ts';
+import { sicoob } from './sicoob.ts';
 
-describe('bankAccountSicoob', () => {
-  it.each(Object.entries(validBankAccountSicoob))('%s: %s', (_, value) => {
-    expect(bankAccountSicoob.test(value)).toBe(true);
+describe('sicoob', () => {
+  it.each(Object.entries(validSicoob))('%s: %s', (_, value) => {
+    expect(sicoob.test(value)).toBe(true);
   });
 
-  it.each(Object.entries(invalidBankAccountSicoob))('%s: %s', (_, value) => {
-    expect(bankAccountSicoob.test(value)).toBe(false);
+  it.each(Object.entries(invalidSicoob))('%s: %s', (_, value) => {
+    expect(sicoob.test(value)).toBe(false);
   });
 });

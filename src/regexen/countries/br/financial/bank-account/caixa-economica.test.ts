@@ -1,16 +1,16 @@
 import { describe, expect, it } from 'vitest';
 import {
-  invalidBankAccountCaixaEconomica,
-  validBankAccountCaixaEconomica,
+  invalidCaixaEconomica,
+  validCaixaEconomica,
 } from '../../../../../fixtures/countries/br/financial/bank-account/caixa-economica.ts';
-import { bankAccountCaixaEconomica } from './caixa-economica.ts';
+import { caixaEconomica } from './caixa-economica.ts';
 
-describe('bankAccountCaixaEconomica', () => {
-  it.each(Object.entries(validBankAccountCaixaEconomica))('%s: %s', (_, value) => {
-    expect(bankAccountCaixaEconomica.test(value)).toBe(true);
+describe('caixaEconomica', () => {
+  it.each(Object.entries(validCaixaEconomica))('%s: %s', (_, value) => {
+    expect(caixaEconomica.test(value)).toBe(true);
   });
 
-  it.each(Object.entries(invalidBankAccountCaixaEconomica))('%s: %s', (_, value) => {
-    expect(bankAccountCaixaEconomica.test(value)).toBe(false);
+  it.each(Object.entries(invalidCaixaEconomica))('%s: %s', (_, value) => {
+    expect(caixaEconomica.test(value)).toBe(false);
   });
 });

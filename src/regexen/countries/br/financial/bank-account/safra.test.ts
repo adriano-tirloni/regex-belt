@@ -1,16 +1,16 @@
 import { describe, expect, it } from 'vitest';
 import {
-  invalidBankAccountSafra,
-  validBankAccountSafra,
+  invalidSafra,
+  validSafra,
 } from '../../../../../fixtures/countries/br/financial/bank-account/safra.ts';
-import { bankAccountSafra } from './safra.ts';
+import { safra } from './safra.ts';
 
-describe('bankAccountSafra', () => {
-  it.each(Object.entries(validBankAccountSafra))('%s: %s', (_, value) => {
-    expect(bankAccountSafra.test(value)).toBe(true);
+describe('safra', () => {
+  it.each(Object.entries(validSafra))('%s: %s', (_, value) => {
+    expect(safra.test(value)).toBe(true);
   });
 
-  it.each(Object.entries(invalidBankAccountSafra))('%s: %s', (_, value) => {
-    expect(bankAccountSafra.test(value)).toBe(false);
+  it.each(Object.entries(invalidSafra))('%s: %s', (_, value) => {
+    expect(safra.test(value)).toBe(false);
   });
 });

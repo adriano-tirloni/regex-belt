@@ -1,5 +1,5 @@
 /** Valid Caixa Economica account formats (XXXX XXXXXXXXXXX-D) */
-export const validBankAccountCaixaEconomica = {
+export const validCaixaEconomica = {
   /** Standard account with operation 001 */
   standard: '1234 00112345678-9',
   /** Account with operation 013 */
@@ -9,7 +9,7 @@ export const validBankAccountCaixaEconomica = {
 };
 
 /** Invalid Caixa Economica account strings */
-export const invalidBankAccountCaixaEconomica = {
+export const invalidCaixaEconomica = {
   /** Operation code too short (2 digits) */
   shortOperation: '1234 0012345678-9',
   /** Agency with check digit */

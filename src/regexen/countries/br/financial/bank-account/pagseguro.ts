@@ -5,4 +5,4 @@
  * @example ✅ '1234 12345678-9'
  * @example ❌ '1234 1234567-9'
  */
-export const bankAccountPagseguro = /^\d{4}\s\d{8}-[\dX]$/;
+export const pagseguro = /^\d{4}\s\d{8}-[\dX]$/;

@@ -1,16 +1,16 @@
 import { describe, expect, it } from 'vitest';
 import {
-  invalidBankAccountBancoDoBrasil,
-  validBankAccountBancoDoBrasil,
+  invalidBancoDoBrasil,
+  validBancoDoBrasil,
 } from '../../../../../fixtures/countries/br/financial/bank-account/banco-do-brasil.ts';
-import { bankAccountBancoDoBrasil } from './banco-do-brasil.ts';
+import { bancoDoBrasil } from './banco-do-brasil.ts';
 
-describe('bankAccountBancoDoBrasil', () => {
-  it.each(Object.entries(validBankAccountBancoDoBrasil))('%s: %s', (_, value) => {
-    expect(bankAccountBancoDoBrasil.test(value)).toBe(true);
+describe('bancoDoBrasil', () => {
+  it.each(Object.entries(validBancoDoBrasil))('%s: %s', (_, value) => {
+    expect(bancoDoBrasil.test(value)).toBe(true);
   });
 
-  it.each(Object.entries(invalidBankAccountBancoDoBrasil))('%s: %s', (_, value) => {
-    expect(bankAccountBancoDoBrasil.test(value)).toBe(false);
+  it.each(Object.entries(invalidBancoDoBrasil))('%s: %s', (_, value) => {
+    expect(bancoDoBrasil.test(value)).toBe(false);
   });
 });

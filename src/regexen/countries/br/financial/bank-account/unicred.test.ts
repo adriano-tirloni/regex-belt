@@ -1,16 +1,16 @@
 import { describe, expect, it } from 'vitest';
 import {
-  invalidBankAccountUnicred,
-  validBankAccountUnicred,
+  invalidUnicred,
+  validUnicred,
 } from '../../../../../fixtures/countries/br/financial/bank-account/unicred.ts';
-import { bankAccountUnicred } from './unicred.ts';
+import { unicred } from './unicred.ts';
 
-describe('bankAccountUnicred', () => {
-  it.each(Object.entries(validBankAccountUnicred))('%s: %s', (_, value) => {
-    expect(bankAccountUnicred.test(value)).toBe(true);
+describe('unicred', () => {
+  it.each(Object.entries(validUnicred))('%s: %s', (_, value) => {
+    expect(unicred.test(value)).toBe(true);
   });
 
-  it.each(Object.entries(invalidBankAccountUnicred))('%s: %s', (_, value) => {
-    expect(bankAccountUnicred.test(value)).toBe(false);
+  it.each(Object.entries(invalidUnicred))('%s: %s', (_, value) => {
+    expect(unicred.test(value)).toBe(false);
   });
 });

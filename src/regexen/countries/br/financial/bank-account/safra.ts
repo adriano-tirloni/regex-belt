@@ -5,4 +5,4 @@
  * @example ✅ '1234 12345678-9'
  * @example ❌ '1234 1234567-9'
  */
-export const bankAccountSafra = /^\d{4}\s\d{8}-[\dX]$/;
+export const safra = /^\d{4}\s\d{8}-[\dX]$/;

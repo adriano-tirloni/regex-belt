@@ -1,5 +1,5 @@
 /** Valid Unicred account formats (XXXX XXXXXXXX-D) */
-export const validBankAccountUnicred = {
+export const validUnicred = {
   /** Standard account with numeric check digit */
   standard: '1234 12345678-9',
   /** Account with X check digit */
@@ -9,7 +9,7 @@ export const validBankAccountUnicred = {
 };
 
 /** Invalid Unicred account strings */
-export const invalidBankAccountUnicred = {
+export const invalidUnicred = {
   /** Account number too short (7 digits) */
   shortAccount: '1234 1234567-9',
   /** Agency with check digit */

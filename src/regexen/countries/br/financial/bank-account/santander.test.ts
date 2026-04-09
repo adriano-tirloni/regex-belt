@@ -1,16 +1,16 @@
 import { describe, expect, it } from 'vitest';
 import {
-  invalidBankAccountSantander,
-  validBankAccountSantander,
+  invalidSantander,
+  validSantander,
 } from '../../../../../fixtures/countries/br/financial/bank-account/santander.ts';
-import { bankAccountSantander } from './santander.ts';
+import { santander } from './santander.ts';
 
-describe('bankAccountSantander', () => {
-  it.each(Object.entries(validBankAccountSantander))('%s: %s', (_, value) => {
-    expect(bankAccountSantander.test(value)).toBe(true);
+describe('santander', () => {
+  it.each(Object.entries(validSantander))('%s: %s', (_, value) => {
+    expect(santander.test(value)).toBe(true);
   });
 
-  it.each(Object.entries(invalidBankAccountSantander))('%s: %s', (_, value) => {
-    expect(bankAccountSantander.test(value)).toBe(false);
+  it.each(Object.entries(invalidSantander))('%s: %s', (_, value) => {
+    expect(santander.test(value)).toBe(false);
   });
 });

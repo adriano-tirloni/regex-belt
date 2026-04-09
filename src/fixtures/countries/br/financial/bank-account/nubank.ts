@@ -1,5 +1,5 @@
 /** Valid Nubank account formats (XXXX XXXXXXXXXX-D) */
-export const validBankAccountNubank = {
+export const validNubank = {
   /** Standard account with numeric check digit */
   standard: '1234 1234567890-1',
   /** Account with X check digit */
@@ -9,7 +9,7 @@ export const validBankAccountNubank = {
 };
 
 /** Invalid Nubank account strings */
-export const invalidBankAccountNubank = {
+export const invalidNubank = {
   /** Account number too short (9 digits) */
   shortAccount: '1234 123456789-0',
   /** Agency too long (5 digits) */

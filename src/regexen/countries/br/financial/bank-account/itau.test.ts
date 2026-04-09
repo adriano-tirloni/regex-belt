@@ -1,16 +1,16 @@
 import { describe, expect, it } from 'vitest';
 import {
-  invalidBankAccountItau,
-  validBankAccountItau,
+  invalidItau,
+  validItau,
 } from '../../../../../fixtures/countries/br/financial/bank-account/itau.ts';
-import { bankAccountItau } from './itau.ts';
+import { itau } from './itau.ts';
 
-describe('bankAccountItau', () => {
-  it.each(Object.entries(validBankAccountItau))('%s: %s', (_, value) => {
-    expect(bankAccountItau.test(value)).toBe(true);
+describe('itau', () => {
+  it.each(Object.entries(validItau))('%s: %s', (_, value) => {
+    expect(itau.test(value)).toBe(true);
   });
 
-  it.each(Object.entries(invalidBankAccountItau))('%s: %s', (_, value) => {
-    expect(bankAccountItau.test(value)).toBe(false);
+  it.each(Object.entries(invalidItau))('%s: %s', (_, value) => {
+    expect(itau.test(value)).toBe(false);
   });
 });

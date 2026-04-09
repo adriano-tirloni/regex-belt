@@ -1,5 +1,5 @@
 /** Valid BS2 account formats (XXXX XXXXXX-D) */
-export const validBankAccountBs2 = {
+export const validBs2 = {
   /** Standard account with numeric check digit */
   standard: '1234 123456-7',
   /** Account with X check digit */
@@ -9,7 +9,7 @@ export const validBankAccountBs2 = {
 };
 
 /** Invalid BS2 account strings */
-export const invalidBankAccountBs2 = {
+export const invalidBs2 = {
   /** Account number too long (7 digits) */
   longAccount: '1234 1234567-8',
   /** Agency with check digit */

@@ -1,5 +1,5 @@
 /** Valid Inter account formats (XXXX XXXXXXXXX-D) */
-export const validBankAccountInter = {
+export const validInter = {
   /** Standard account with numeric check digit */
   standard: '1234 123456789-0',
   /** Account with X check digit */
@@ -9,7 +9,7 @@ export const validBankAccountInter = {
 };
 
 /** Invalid Inter account strings */
-export const invalidBankAccountInter = {
+export const invalidInter = {
   /** Account number too short (8 digits) */
   shortAccount: '1234 12345678-0',
   /** Agency too long (5 digits) */

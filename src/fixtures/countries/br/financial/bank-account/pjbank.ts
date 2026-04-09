@@ -1,5 +1,5 @@
 /** Valid PJBank account formats (XXXX XXXXXXXXXX-D) */
-export const validBankAccountPjbank = {
+export const validPjbank = {
   /** Standard account with numeric check digit */
   standard: '1234 1234567890-1',
   /** Account with X check digit */
@@ -9,7 +9,7 @@ export const validBankAccountPjbank = {
 };
 
 /** Invalid PJBank account strings */
-export const invalidBankAccountPjbank = {
+export const invalidPjbank = {
   /** Account number too short (9 digits) */
   shortAccount: '1234 123456789-0',
   /** Agency too long (5 digits) */

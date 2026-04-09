@@ -1,5 +1,5 @@
 /** Valid Banco do Brasil account formats (XXXX-D XXXXXXXX-D) */
-export const validBankAccountBancoDoBrasil = {
+export const validBancoDoBrasil = {
   /** Standard account with numeric check digits */
   standard: '1234-5 12345678-9',
   /** Account with X check digit on agency */
@@ -9,7 +9,7 @@ export const validBankAccountBancoDoBrasil = {
 };
 
 /** Invalid Banco do Brasil account strings */
-export const invalidBankAccountBancoDoBrasil = {
+export const invalidBancoDoBrasil = {
   /** Account number too short (7 digits) */
   shortAccount: '1234-5 1234567-9',
   /** Missing space separator */

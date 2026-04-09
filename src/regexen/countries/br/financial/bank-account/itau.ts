@@ -5,4 +5,4 @@
  * @example ✅ '1234 12345-6'
  * @example ❌ '1234 123456-7'
  */
-export const bankAccountItau = /^\d{4}\s\d{5}-[\dX]$/;
+export const itau = /^\d{4}\s\d{5}-[\dX]$/;

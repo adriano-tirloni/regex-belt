@@ -1,5 +1,5 @@
 /** Valid Mercado Pago account formats (XXXX XXXXXXXXXXXXX-D) */
-export const validBankAccountMercadoPago = {
+export const validMercadoPago = {
   /** Standard account with numeric check digit */
   standard: '1234 1234567890123-4',
   /** Account with X check digit */
@@ -9,7 +9,7 @@ export const validBankAccountMercadoPago = {
 };
 
 /** Invalid Mercado Pago account strings */
-export const invalidBankAccountMercadoPago = {
+export const invalidMercadoPago = {
   /** Account number too short (12 digits) */
   shortAccount: '1234 123456789012-4',
   /** Agency too long (5 digits) */

@@ -1,5 +1,5 @@
 /** Valid Banco C6 account formats (XXXX XXXXXXX-D) */
-export const validBankAccountBancoC6 = {
+export const validBancoC6 = {
   /** Standard account with numeric check digit */
   standard: '1234 1234567-8',
   /** Account with X check digit */
@@ -9,7 +9,7 @@ export const validBankAccountBancoC6 = {
 };
 
 /** Invalid Banco C6 account strings */
-export const invalidBankAccountBancoC6 = {
+export const invalidBancoC6 = {
   /** Account number too long (8 digits) */
   longAccount: '1234 12345678-9',
   /** Agency with check digit */

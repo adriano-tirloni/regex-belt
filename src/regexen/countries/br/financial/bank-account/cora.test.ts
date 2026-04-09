@@ -1,16 +1,16 @@
 import { describe, expect, it } from 'vitest';
 import {
-  invalidBankAccountCora,
-  validBankAccountCora,
+  invalidCora,
+  validCora,
 } from '../../../../../fixtures/countries/br/financial/bank-account/cora.ts';
-import { bankAccountCora } from './cora.ts';
+import { cora } from './cora.ts';
 
-describe('bankAccountCora', () => {
-  it.each(Object.entries(validBankAccountCora))('%s: %s', (_, value) => {
-    expect(bankAccountCora.test(value)).toBe(true);
+describe('cora', () => {
+  it.each(Object.entries(validCora))('%s: %s', (_, value) => {
+    expect(cora.test(value)).toBe(true);
   });
 
-  it.each(Object.entries(invalidBankAccountCora))('%s: %s', (_, value) => {
-    expect(bankAccountCora.test(value)).toBe(false);
+  it.each(Object.entries(invalidCora))('%s: %s', (_, value) => {
+    expect(cora.test(value)).toBe(false);
   });
 });

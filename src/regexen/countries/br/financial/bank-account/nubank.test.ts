@@ -1,16 +1,16 @@
 import { describe, expect, it } from 'vitest';
 import {
-  invalidBankAccountNubank,
-  validBankAccountNubank,
+  invalidNubank,
+  validNubank,
 } from '../../../../../fixtures/countries/br/financial/bank-account/nubank.ts';
-import { bankAccountNubank } from './nubank.ts';
+import { nubank } from './nubank.ts';
 
-describe('bankAccountNubank', () => {
-  it.each(Object.entries(validBankAccountNubank))('%s: %s', (_, value) => {
-    expect(bankAccountNubank.test(value)).toBe(true);
+describe('nubank', () => {
+  it.each(Object.entries(validNubank))('%s: %s', (_, value) => {
+    expect(nubank.test(value)).toBe(true);
   });
 
-  it.each(Object.entries(invalidBankAccountNubank))('%s: %s', (_, value) => {
-    expect(bankAccountNubank.test(value)).toBe(false);
+  it.each(Object.entries(invalidNubank))('%s: %s', (_, value) => {
+    expect(nubank.test(value)).toBe(false);
   });
 });

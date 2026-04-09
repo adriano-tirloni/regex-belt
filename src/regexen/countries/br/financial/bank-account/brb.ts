@@ -5,4 +5,4 @@
  * @example ✅ '1234 123456789-0'
  * @example ❌ '1234 12345678-0'
  */
-export const bankAccountBrb = /^\d{4}\s\d{9}-[\dX]$/;
+export const brb = /^\d{4}\s\d{9}-[\dX]$/;

@@ -1,5 +1,5 @@
 /** Valid Banrisul account formats (XXXX XXXXXXXXX-D) */
-export const validBankAccountBanrisul = {
+export const validBanrisul = {
   /** Standard account with numeric check digit */
   standard: '1234 123456789-0',
   /** Account with X check digit */
@@ -9,7 +9,7 @@ export const validBankAccountBanrisul = {
 };
 
 /** Invalid Banrisul account strings */
-export const invalidBankAccountBanrisul = {
+export const invalidBanrisul = {
   /** Account number too short (8 digits) */
   shortAccount: '1234 12345678-0',
   /** Agency too long (5 digits) */

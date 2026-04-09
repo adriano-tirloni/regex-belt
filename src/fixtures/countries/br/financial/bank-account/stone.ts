@@ -1,5 +1,5 @@
 /** Valid Stone account formats (XXXX XXXXXXX-D) */
-export const validBankAccountStone = {
+export const validStone = {
   /** Standard account with numeric check digit */
   standard: '1234 1234567-8',
   /** Account with X check digit */
@@ -9,7 +9,7 @@ export const validBankAccountStone = {
 };
 
 /** Invalid Stone account strings */
-export const invalidBankAccountStone = {
+export const invalidStone = {
   /** Account number too long (8 digits) */
   longAccount: '1234 12345678-9',
   /** Agency with check digit */

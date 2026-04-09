@@ -6,4 +6,4 @@
  * @example ✅ '1234 0013123456789-0'
  * @example ❌ '1234 001312345678-0'
  */
-export const bankAccountCaixaEconomicaNew = /^\d{4}\s\d{4}\d{9}-[\dX]$/;
+export const caixaEconomicaNew = /^\d{4}\s\d{4}\d{9}-[\dX]$/;

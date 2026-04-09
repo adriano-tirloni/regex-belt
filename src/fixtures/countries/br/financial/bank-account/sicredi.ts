@@ -1,5 +1,5 @@
 /** Valid Sicredi account formats (XXXX XXXXXX) */
-export const validBankAccountSicredi = {
+export const validSicredi = {
   /** Standard account */
   standard: '1234 123456',
   /** Minimum values */
@@ -9,7 +9,7 @@ export const validBankAccountSicredi = {
 };
 
 /** Invalid Sicredi account strings */
-export const invalidBankAccountSicredi = {
+export const invalidSicredi = {
   /** Account number too long (7 digits) */
   longAccount: '1234 1234567',
   /** Agency with check digit */

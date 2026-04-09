@@ -1,16 +1,16 @@
 import { describe, expect, it } from 'vitest';
 import {
-  invalidBankAccountMercadoPago,
-  validBankAccountMercadoPago,
+  invalidMercadoPago,
+  validMercadoPago,
 } from '../../../../../fixtures/countries/br/financial/bank-account/mercado-pago.ts';
-import { bankAccountMercadoPago } from './mercado-pago.ts';
+import { mercadoPago } from './mercado-pago.ts';
 
-describe('bankAccountMercadoPago', () => {
-  it.each(Object.entries(validBankAccountMercadoPago))('%s: %s', (_, value) => {
-    expect(bankAccountMercadoPago.test(value)).toBe(true);
+describe('mercadoPago', () => {
+  it.each(Object.entries(validMercadoPago))('%s: %s', (_, value) => {
+    expect(mercadoPago.test(value)).toBe(true);
   });
 
-  it.each(Object.entries(invalidBankAccountMercadoPago))('%s: %s', (_, value) => {
-    expect(bankAccountMercadoPago.test(value)).toBe(false);
+  it.each(Object.entries(invalidMercadoPago))('%s: %s', (_, value) => {
+    expect(mercadoPago.test(value)).toBe(false);
   });
 });

@@ -5,4 +5,4 @@
  * @example ✅ '1234 1234567-8'
  * @example ❌ '1234 12345678-9'
  */
-export const bankAccountBancoOriginal = /^\d{4}\s\d{7}-[\dX]$/;
+export const bancoOriginal = /^\d{4}\s\d{7}-[\dX]$/;
