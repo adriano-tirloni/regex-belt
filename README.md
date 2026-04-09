@@ -214,6 +214,8 @@ That's it
 
 </details>
 
+<sub>Last updated: 2026-04-09</sub>
+
 ---
 
 [**`iso8601DatetimeWithoutTz`**](./src/regexen/datetime/iso8601.ts) — `✅ '2022-12-31T23:59:59'` — Matches an ISO-8601 datetime without timezone Format: YYYY-MM-DDTHH:mm:ss[.mmm] *(Enforces beginning and end of string)*
@@ -232,6 +234,8 @@ That's it
 | `2022-12-31T23:59:59+05:30` | ❌ |
 
 </details>
+
+<sub>Last updated: 2026-04-09</sub>
 
 ---
 
@@ -253,6 +257,8 @@ That's it
 
 </details>
 
+<sub>Last updated: 2026-04-09</sub>
+
 ---
 
 [**`time12hhmmss`**](./src/regexen/datetime/time-12h.ts) — `✅ '12:59:59 PM'` — Matches a 12-hour time in HH:MM:SS AM/PM format *(Enforces beginning and end of string)*
@@ -271,6 +277,8 @@ That's it
 | `13:00:00 PM` | ❌ |
 
 </details>
+
+<sub>Last updated: 2026-04-09</sub>
 
 ---
 
@@ -291,6 +299,8 @@ That's it
 
 </details>
 
+<sub>Last updated: 2026-04-09</sub>
+
 ---
 
 [**`time12hh`**](./src/regexen/datetime/time-12h.ts) — `✅ '12 PM'` — Matches a 12-hour hour in HH AM/PM format *(Enforces beginning and end of string)*
@@ -309,6 +319,8 @@ That's it
 | `13 PM` | ❌ |
 
 </details>
+
+<sub>Last updated: 2026-04-09</sub>
 
 ---
 
@@ -329,6 +341,8 @@ That's it
 
 </details>
 
+<sub>Last updated: 2026-04-09</sub>
+
 ---
 
 [**`time24hhmm`**](./src/regexen/datetime/time-24h.ts) — `✅ '23:59'` — Matches a 24-hour time in HH:MM format *(Enforces beginning and end of string)*
@@ -348,6 +362,8 @@ That's it
 
 </details>
 
+<sub>Last updated: 2026-04-09</sub>
+
 ---
 
 [**`time24hh`**](./src/regexen/datetime/time-24h.ts) — `✅ '23'` — Matches a 24-hour hour in HH format *(Enforces beginning and end of string)*
@@ -366,6 +382,8 @@ That's it
 | `5` | ❌ |
 
 </details>
+
+<sub>Last updated: 2026-04-09</sub>
 
 ### Math
 
@@ -387,6 +405,8 @@ That's it
 
 </details>
 
+<sub>Last updated: 2026-04-09</sub>
+
 ---
 
 [**`negativeDecimal`**](./src/regexen/math/decimal.ts) — `✅ '-1.5'` — Matches a negative decimal number (no leading zeros except before the dot) *(Enforces beginning and end of string)*
@@ -405,6 +425,8 @@ That's it
 | `-1` | ❌ |
 
 </details>
+
+<sub>Last updated: 2026-04-09</sub>
 
 ---
 
@@ -426,6 +448,8 @@ That's it
 
 </details>
 
+<sub>Last updated: 2026-04-09</sub>
+
 ---
 
 [**`positiveInteger`**](./src/regexen/math/integer.ts) — `✅ '1'` — Matches a positive integer (greater than zero, no leading zeros) *(Enforces beginning and end of string)*
@@ -445,6 +469,8 @@ That's it
 | `01` | ❌ |
 
 </details>
+
+<sub>Last updated: 2026-04-09</sub>
 
 ---
 
@@ -466,6 +492,8 @@ That's it
 
 </details>
 
+<sub>Last updated: 2026-04-09</sub>
+
 ---
 
 [**`integer`**](./src/regexen/math/integer.ts) — `✅ '0'` — Matches any integer including zero (no leading zeros except for zero itself) *(Enforces beginning and end of string)*
@@ -486,6 +514,8 @@ That's it
 
 </details>
 
+<sub>Last updated: 2026-04-09</sub>
+
 ### Network / Routing
 
 [**`ipv4`**](./src/regexen/network/routing/ipv4.ts) — `✅ '192.168.1.1'` — Matches a valid IPv4 address (four octets 0-255 separated by dots) *(Enforces beginning and end of string)*
@@ -505,6 +535,8 @@ That's it
 | `192.168.1` | ❌ |
 
 </details>
+
+<sub>Last updated: 2026-04-09</sub>
 
 ---
 
@@ -527,6 +559,8 @@ That's it
 
 </details>
 
+<sub>Last updated: 2026-04-09</sub>
+
 ### Network / URL
 
 [**`urlCommonPublicDomainOnly`**](./src/regexen/network/url/common-public-domain-only.ts) — `✅ 'https://example.com'` — Matches a public HTTP/HTTPS URL with only the domain Format: scheme://host *(Enforces beginning and end of string)*
@@ -547,6 +581,8 @@ That's it
 
 </details>
 
+<sub>Last updated: 2026-04-09</sub>
+
 ---
 
 [**`urlCommonPublic`**](./src/regexen/network/url/common-public.ts) — `✅ 'https://example.com/path?q=1'` — Matches a common public HTTP/HTTPS URL without credentials Format: scheme://host[:port][/path][?query][#fragment] *(Enforces beginning and end of string)*
@@ -566,6 +602,8 @@ That's it
 
 </details>
 
+<sub>Last updated: 2026-04-09</sub>
+
 ---
 
 [**`urlFtp`**](./src/regexen/network/url/ftp.ts) — `✅ 'ftp://files.example.com'` — Matches an FTP URL with all optional components Format: ftp://[credentials@]host[:port][/path][?query][#fragment] *(Enforces beginning and end of string)*
@@ -584,6 +622,8 @@ That's it
 | `http://example.com` | ❌ |
 
 </details>
+
+<sub>Last updated: 2026-04-09</sub>
 
 ---
 
@@ -605,6 +645,8 @@ That's it
 
 </details>
 
+<sub>Last updated: 2026-04-09</sub>
+
 ---
 
 [**`urlHttp`**](./src/regexen/network/url/http.ts) — `✅ 'http://example.com'` — Matches an HTTP URL with all optional components Format: http://[credentials@]host[:port][/path][?query][#fragment] *(Enforces beginning and end of string)*
@@ -623,6 +665,8 @@ That's it
 | `ftp://files.example.com` | ❌ |
 
 </details>
+
+<sub>Last updated: 2026-04-09</sub>
 
 ---
 
@@ -644,6 +688,8 @@ That's it
 
 </details>
 
+<sub>Last updated: 2026-04-09</sub>
+
 ---
 
 [**`urlHttps`**](./src/regexen/network/url/https.ts) — `✅ 'https://example.com'` — Matches an HTTPS URL with all optional components Format: https://[credentials@]host[:port][/path][?query][#fragment] *(Enforces beginning and end of string)*
@@ -663,6 +709,8 @@ That's it
 
 </details>
 
+<sub>Last updated: 2026-04-09</sub>
+
 ---
 
 [**`urlNoCredentials`**](./src/regexen/network/url/no-credentials.ts) — `✅ 'https://example.com:8080/path?q=1'` — Matches a URL without credentials Format: scheme://host[:port][/path][?query][#fragment] *(Enforces beginning and end of string)*
@@ -680,6 +728,8 @@ That's it
 | `https://user:pass@example.com` | ❌ |
 
 </details>
+
+<sub>Last updated: 2026-04-09</sub>
 
 ---
 
@@ -700,6 +750,8 @@ That's it
 
 </details>
 
+<sub>Last updated: 2026-04-09</sub>
+
 ---
 
 [**`urlNoPort`**](./src/regexen/network/url/no-port.ts) — `✅ 'https://user:pass@example.com/path'` — Matches a URL without a port component Format: scheme://[credentials@]host[/path][?query][#fragment] *(Enforces beginning and end of string)*
@@ -717,6 +769,8 @@ That's it
 | `https://example.com:8080` | ❌ |
 
 </details>
+
+<sub>Last updated: 2026-04-09</sub>
 
 ---
 
@@ -739,6 +793,8 @@ That's it
 
 </details>
 
+<sub>Last updated: 2026-04-09</sub>
+
 ### Vendors / Youtube
 
 [**`youtubeChannelId`**](./src/regexen/vendors/youtube/channel-id.ts) — `✅ 'https://www.youtube.com/channel/UC1234567890abcdefghijkl'` — Matches a YouTube channel URL and captures the 22-character channel ID Channel URLs use the /channel/UC prefix followed by a 22-character ID *(Does not enforce beginning and end of string)*
@@ -757,6 +813,8 @@ That's it
 | `https://example.com` | ❌ |
 
 </details>
+
+<sub>Last updated: 2026-04-09</sub>
 
 ---
 
@@ -778,6 +836,8 @@ That's it
 
 </details>
 
+<sub>Last updated: 2026-04-09</sub>
+
 ### WEB / Misc
 
 [**`email`**](./src/regexen/web/misc/email.ts) — `✅ 'user@example.com'` — Matches a basic email address (local part @ domain) Verifies the presence of @ with non-empty local and domain parts. For strict RFC 5322 validation, use a dedicated email validation library. *(Enforces beginning and end of string)*
@@ -798,6 +858,8 @@ That's it
 
 </details>
 
+<sub>Last updated: 2026-04-09</sub>
+
 ### WEB / Styles
 
 [**`hexColor`**](./src/regexen/web/styles/hex-color.ts) — `✅ '#ff0000'` — Matches an RGB hex color value with optional # prefix Supports both 3-digit and 6-digit hex notation *(Enforces beginning and end of string)*
@@ -817,6 +879,8 @@ That's it
 | `#gggggg` | ❌ |
 
 </details>
+
+<sub>Last updated: 2026-04-09</sub>
 
 ### Countries / BR / Codes
 
