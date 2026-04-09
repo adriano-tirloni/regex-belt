@@ -35,7 +35,8 @@
     "lint": "biome check .",
     "type-check": "tsc --noEmit",
     "test": "vitest run --coverage",
-    "build": "tsdown"
+    "build": "tsdown",
+    "readme": "node --experimental-strip-types scripts/generate-readme.ts"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.4.8",
