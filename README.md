@@ -19,7 +19,7 @@ countries.br.documents.cpf.test('123.456.789-09'); // true
 
 <!-- GENERATED:START - Do not edit below this line -->
 
-## Datetime
+### Datetime
 
 [**`dashedDateLoose`**](./src/regexen/datetime/dashed-date-loose.ts) — `✅ '2022-12-31'` — Matches a date in the format YYYY-MM-DD Valid digits are 0000 to 9999 for year, 01 to 12 for month and 01 to 31 for day *(Does not enforce beginning and end of string)*
 
@@ -36,6 +36,8 @@ countries.br.documents.cpf.test('123.456.789-09'); // true
 | `9992022-12-31` | ✅ |
 
 </details>
+
+*Last updated: 2026-04-08*
 
 ---
 
@@ -55,6 +57,8 @@ countries.br.documents.cpf.test('123.456.789-09'); // true
 
 </details>
 
+*Last updated: 2026-04-08*
+
 ---
 
 [**`isoUtc`**](./src/regexen/datetime/iso-utc.ts) — `✅ '2022-12-31T23:59:59.999Z'` — Regex that matches a UTC ISO String Date in format YYYY-MM-DDTHH:mm:ss.sssZ
@@ -72,9 +76,11 @@ countries.br.documents.cpf.test('123.456.789-09'); // true
 
 </details>
 
-## Countries / BR / Documents
+*Last updated: 2026-04-08*
 
-[**`cpf`**](./src/regexen/countries/br/documents/cpf.ts) — `✅ '123.456.789-09'` — Matches a Brazilian CPF number in the format XXX.XXX.XXX-XX *(Enforces beginning and end of string)*
+### Countries / BR / Documents
+
+[**`cpfFormatted`**](./src/regexen/countries/br/documents/cpf.ts) — `✅ '123.456.789-09'` — Matches a Brazilian CPF number in the format XXX.XXX.XXX-XX *(Enforces beginning and end of string)*
 
 ```regex
 /^\d{3}\.\d{3}\.\d{3}-\d{2}$/
@@ -88,5 +94,7 @@ countries.br.documents.cpf.test('123.456.789-09'); // true
 | `12345678909` | ❌ |
 
 </details>
+
+*Last updated: 2026-04-08*
 
 <!-- GENERATED:END -->

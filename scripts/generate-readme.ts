@@ -1,3 +1,4 @@
+import { execSync } from 'node:child_process';
 import { readdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
 import { join, relative } from 'node:path';
 
@@ -19,6 +20,36 @@ interface RegexEntry {
   examples: ExampleEntry[];
   category: string;
   filePath: string;
+  lastUpdated: string;
+}
+
+/**
+ * Builds a map of file path → last commit date by parsing a single git log pass.
+ * First occurrence of each file is its most recent change.
+ */
+function buildLastUpdatedMap(): Map<string, string> {
+  const map = new Map<string, string>();
+
+  const output = execSync('git log --format=%aI --name-only', { encoding: 'utf-8' });
+
+  let currentDate = '';
+  for (const line of output.split('\n')) {
+    const trimmed = line.trim();
+    if (!trimmed) continue;
+
+    // ISO date lines start with a digit (e.g. 2026-04-08T...)
+    if (/^\d{4}-/.test(trimmed)) {
+      currentDate = trimmed.slice(0, 10);
+      continue;
+    }
+
+    // File path line — only keep the first (most recent) occurrence
+    if (!map.has(trimmed)) {
+      map.set(trimmed, currentDate);
+    }
+  }
+
+  return map;
 }
 
 /**
@@ -140,8 +171,12 @@ function formatCategoryTitle(category: string): string {
 }
 
 // Collect and parse all regex files
+const lastUpdatedMap = buildLastUpdatedMap();
 const files = collectRegexFiles(regexenDir);
-const entries = files.map(parseRegexFile).filter((entry): entry is RegexEntry => entry !== null);
+const entries = files
+  .map(parseRegexFile)
+  .filter((entry): entry is RegexEntry => entry !== null)
+  .map(entry => ({ ...entry, lastUpdated: lastUpdatedMap.get(entry.filePath) ?? '' }));
 
 const grouped = groupByCategory(entries);
 
@@ -178,6 +213,12 @@ function buildEntryBlock(entry: RegexEntry): string[] {
     }
     lines.push('');
     lines.push('</details>');
+  }
+
+  // Last updated date from git history
+  if (entry.lastUpdated) {
+    lines.push('');
+    lines.push(`*Last updated: ${entry.lastUpdated}*`);
   }
 
   return lines;
