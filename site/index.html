@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>regex-belt — Interactive Regex Playground</title>
+  <meta name="description" content="Try 100+ battle-tested regular expressions interactively. Dates, documents, phone numbers, URLs — validated, tested, and ready to import.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <h1>regex-belt</h1>
+      <p class="tagline">Battle-tested regular expressions you'd otherwise copy-paste from Stack Overflow.</p>
+      <nav class="header-links">
+        <a href="https://github.com/adriano-tirloni/regex-belt" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.npmjs.com/package/regex-belt" target="_blank" rel="noopener">npm</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="toolbar">
+    <div class="toolbar-content">
+      <input type="text" id="search" placeholder="Search patterns..." autocomplete="off">
+      <select id="category-filter">
+        <option value="">All categories</option>
+      </select>
+      <span id="count"></span>
+    </div>
+  </div>
+
+  <main id="cards"></main>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

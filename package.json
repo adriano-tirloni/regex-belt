@@ -37,6 +37,7 @@
     "test": "vitest run --coverage",
     "build": "tsdown",
     "readme": "node --experimental-strip-types scripts/generate-readme.ts",
+    "site:data": "node --experimental-strip-types scripts/generate-site-data.ts",
     "check-all": "pnpm lint && pnpm type-check && pnpm test && pnpm build && pnpm readme"
   },
   "devDependencies": {
