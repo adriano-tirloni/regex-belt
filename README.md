@@ -198,52 +198,9 @@ That's it
 
 <sub>Last updated: 2026-04-08</sub>
 
----
+### Datetime / Iso8601
 
-[**`iso8601Standard`**](./src/regexen/datetime/iso8601.ts) — `✅ '2022-12-31T23:59:59.999Z'` — Matches an ISO-8601 datetime with optional timezone Format: YYYY-MM-DDTHH:mm:ss[.mmm][Z|±HH:mm] *(Enforces beginning and end of string)*
-
-```regex
-/^\d{4}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\d|3[01])T(?:[01]\d|2[0-3]):[0-5]\d:[0-5]\d(?:\.\d{1,3})?(?:Z|[+-](?:[01]\d|2[0-3]):[0-5]\d)?$/
-```
-
-<details><summary>Examples</summary>
-
-| Input | Match |
-|:------|:-----:|
-| `2022-12-31T23:59:59.999Z` | ✅ |
-| `2022-12-31T23:59:59+05:30` | ✅ |
-| `2022-12-31T23:59:59` | ✅ |
-| `2022-12-31` | ❌ |
-| `not-a-date` | ❌ |
-
-</details>
-
-<sub>Last updated: 2026-04-09</sub>
-
----
-
-[**`iso8601DatetimeWithoutTz`**](./src/regexen/datetime/iso8601.ts) — `✅ '2022-12-31T23:59:59'` — Matches an ISO-8601 datetime without timezone Format: YYYY-MM-DDTHH:mm:ss[.mmm] *(Enforces beginning and end of string)*
-
-```regex
-/^\d{4}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\d|3[01])T(?:[01]\d|2[0-3]):[0-5]\d:[0-5]\d(?:\.\d{1,3})?$/
-```
-
-<details><summary>Examples</summary>
-
-| Input | Match |
-|:------|:-----:|
-| `2022-12-31T23:59:59` | ✅ |
-| `2022-12-31T23:59:59.999` | ✅ |
-| `2022-12-31T23:59:59Z` | ❌ |
-| `2022-12-31T23:59:59+05:30` | ❌ |
-
-</details>
-
-<sub>Last updated: 2026-04-09</sub>
-
----
-
-[**`iso8601DatetimeWithTz`**](./src/regexen/datetime/iso8601.ts) — `✅ '2022-12-31T23:59:59Z'` — Matches an ISO-8601 datetime with required timezone Format: YYYY-MM-DDTHH:mm:ss[.mmm](Z|±HH:mm) *(Enforces beginning and end of string)*
+[**`datetimeWithTz`**](./src/regexen/datetime/iso8601/datetime-with-tz.ts) — `✅ '2022-12-31T23:59:59Z'` — Matches an ISO-8601 datetime with required timezone Format: YYYY-MM-DDTHH:mm:ss[.mmm](Z|±HH:mm) *(Enforces beginning and end of string)*
 
 ```regex
 /^\d{4}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\d|3[01])T(?:[01]\d|2[0-3]):[0-5]\d:[0-5]\d(?:\.\d{1,3})?(?:Z|[+-](?:[01]\d|2[0-3]):[0-5]\d)$/
@@ -265,20 +222,20 @@ That's it
 
 ---
 
-[**`time12hhmmss`**](./src/regexen/datetime/time-12h.ts) — `✅ '12:59:59 PM'` — Matches a 12-hour time in HH:MM:SS AM/PM format *(Enforces beginning and end of string)*
+[**`datetimeWithoutTz`**](./src/regexen/datetime/iso8601/datetime-without-tz.ts) — `✅ '2022-12-31T23:59:59'` — Matches an ISO-8601 datetime without timezone Format: YYYY-MM-DDTHH:mm:ss[.mmm] *(Enforces beginning and end of string)*
 
 ```regex
-/^(?:0?[1-9]|1[0-2]):[0-5]\d:[0-5]\d\s?[AaPp][Mm]$/
+/^\d{4}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\d|3[01])T(?:[01]\d|2[0-3]):[0-5]\d:[0-5]\d(?:\.\d{1,3})?$/
 ```
 
 <details><summary>Examples</summary>
 
 | Input | Match |
 |:------|:-----:|
-| `12:59:59 PM` | ✅ |
-| `01:00:00 AM` | ✅ |
-| `00:00:00 AM` | ❌ |
-| `13:00:00 PM` | ❌ |
+| `2022-12-31T23:59:59` | ✅ |
+| `2022-12-31T23:59:59.999` | ✅ |
+| `2022-12-31T23:59:59Z` | ❌ |
+| `2022-12-31T23:59:59+05:30` | ❌ |
 
 </details>
 
@@ -286,28 +243,29 @@ That's it
 
 ---
 
-[**`time12hhmm`**](./src/regexen/datetime/time-12h.ts) — `✅ '12:59 PM'` — Matches a 12-hour time in HH:MM AM/PM format *(Enforces beginning and end of string)*
+[**`standard`**](./src/regexen/datetime/iso8601/standard.ts) — `✅ '2022-12-31T23:59:59.999Z'` — Matches an ISO-8601 datetime with optional timezone Format: YYYY-MM-DDTHH:mm:ss[.mmm][Z|±HH:mm] *(Enforces beginning and end of string)*
 
 ```regex
-/^(?:0?[1-9]|1[0-2]):[0-5]\d\s?[AaPp][Mm]$/
+/^\d{4}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\d|3[01])T(?:[01]\d|2[0-3]):[0-5]\d:[0-5]\d(?:\.\d{1,3})?(?:Z|[+-](?:[01]\d|2[0-3]):[0-5]\d)?$/
 ```
 
 <details><summary>Examples</summary>
 
 | Input | Match |
 |:------|:-----:|
-| `12:59 PM` | ✅ |
-| `01:00 AM` | ✅ |
-| `00:00 AM` | ❌ |
-| `13:00 PM` | ❌ |
+| `2022-12-31T23:59:59.999Z` | ✅ |
+| `2022-12-31T23:59:59+05:30` | ✅ |
+| `2022-12-31T23:59:59` | ✅ |
+| `2022-12-31` | ❌ |
+| `not-a-date` | ❌ |
 
 </details>
 
 <sub>Last updated: 2026-04-09</sub>
 
----
+### Datetime / Time-12h
 
-[**`time12hh`**](./src/regexen/datetime/time-12h.ts) — `✅ '12 PM'` — Matches a 12-hour hour in HH AM/PM format *(Enforces beginning and end of string)*
+[**`hh`**](./src/regexen/datetime/time-12h/hh.ts) — `✅ '12 PM'` — Matches a 12-hour hour in HH AM/PM format *(Enforces beginning and end of string)*
 
 ```regex
 /^(?:0?[1-9]|1[0-2])\s?[AaPp][Mm]$/
@@ -328,20 +286,20 @@ That's it
 
 ---
 
-[**`time24hhmmss`**](./src/regexen/datetime/time-24h.ts) — `✅ '23:59:59'` — Matches a 24-hour time in HH:MM:SS format *(Enforces beginning and end of string)*
+[**`hhmm`**](./src/regexen/datetime/time-12h/hhmm.ts) — `✅ '12:59 PM'` — Matches a 12-hour time in HH:MM AM/PM format *(Enforces beginning and end of string)*
 
 ```regex
-/^(?:[01]\d|2[0-3]):[0-5]\d:[0-5]\d$/
+/^(?:0?[1-9]|1[0-2]):[0-5]\d\s?[AaPp][Mm]$/
 ```
 
 <details><summary>Examples</summary>
 
 | Input | Match |
 |:------|:-----:|
-| `23:59:59` | ✅ |
-| `00:00:00` | ✅ |
-| `24:00:00` | ❌ |
-| `23:59` | ❌ |
+| `12:59 PM` | ✅ |
+| `01:00 AM` | ✅ |
+| `00:00 AM` | ❌ |
+| `13:00 PM` | ❌ |
 
 </details>
 
@@ -349,7 +307,49 @@ That's it
 
 ---
 
-[**`time24hhmm`**](./src/regexen/datetime/time-24h.ts) — `✅ '23:59'` — Matches a 24-hour time in HH:MM format *(Enforces beginning and end of string)*
+[**`hhmmss`**](./src/regexen/datetime/time-12h/hhmmss.ts) — `✅ '12:59:59 PM'` — Matches a 12-hour time in HH:MM:SS AM/PM format *(Enforces beginning and end of string)*
+
+```regex
+/^(?:0?[1-9]|1[0-2]):[0-5]\d:[0-5]\d\s?[AaPp][Mm]$/
+```
+
+<details><summary>Examples</summary>
+
+| Input | Match |
+|:------|:-----:|
+| `12:59:59 PM` | ✅ |
+| `01:00:00 AM` | ✅ |
+| `00:00:00 AM` | ❌ |
+| `13:00:00 PM` | ❌ |
+
+</details>
+
+<sub>Last updated: 2026-04-09</sub>
+
+### Datetime / Time-24h
+
+[**`hh`**](./src/regexen/datetime/time-24h/hh.ts) — `✅ '23'` — Matches a 24-hour hour in HH format *(Enforces beginning and end of string)*
+
+```regex
+/^(?:[01]\d|2[0-3])$/
+```
+
+<details><summary>Examples</summary>
+
+| Input | Match |
+|:------|:-----:|
+| `23` | ✅ |
+| `00` | ✅ |
+| `24` | ❌ |
+| `5` | ❌ |
+
+</details>
+
+<sub>Last updated: 2026-04-09</sub>
+
+---
+
+[**`hhmm`**](./src/regexen/datetime/time-24h/hhmm.ts) — `✅ '23:59'` — Matches a 24-hour time in HH:MM format *(Enforces beginning and end of string)*
 
 ```regex
 /^(?:[01]\d|2[0-3]):[0-5]\d$/
@@ -370,71 +370,28 @@ That's it
 
 ---
 
-[**`time24hh`**](./src/regexen/datetime/time-24h.ts) — `✅ '23'` — Matches a 24-hour hour in HH format *(Enforces beginning and end of string)*
+[**`hhmmss`**](./src/regexen/datetime/time-24h/hhmmss.ts) — `✅ '23:59:59'` — Matches a 24-hour time in HH:MM:SS format *(Enforces beginning and end of string)*
 
 ```regex
-/^(?:[01]\d|2[0-3])$/
+/^(?:[01]\d|2[0-3]):[0-5]\d:[0-5]\d$/
 ```
 
 <details><summary>Examples</summary>
 
 | Input | Match |
 |:------|:-----:|
-| `23` | ✅ |
-| `00` | ✅ |
-| `24` | ❌ |
-| `5` | ❌ |
+| `23:59:59` | ✅ |
+| `00:00:00` | ✅ |
+| `24:00:00` | ❌ |
+| `23:59` | ❌ |
 
 </details>
 
 <sub>Last updated: 2026-04-09</sub>
 
-### Math
+### Math / Decimal
 
-[**`positiveDecimal`**](./src/regexen/math/decimal.ts) — `✅ '1.5'` — Matches a positive decimal number (no leading zeros except before the dot) *(Enforces beginning and end of string)*
-
-```regex
-/^(?:0|[1-9]\d*)\.\d+$/
-```
-
-<details><summary>Examples</summary>
-
-| Input | Match |
-|:------|:-----:|
-| `1.5` | ✅ |
-| `0.123` | ✅ |
-| `123.456` | ✅ |
-| `-1.5` | ❌ |
-| `1` | ❌ |
-
-</details>
-
-<sub>Last updated: 2026-04-09</sub>
-
----
-
-[**`negativeDecimal`**](./src/regexen/math/decimal.ts) — `✅ '-1.5'` — Matches a negative decimal number (no leading zeros except before the dot) *(Enforces beginning and end of string)*
-
-```regex
-/^-(?:0|[1-9]\d*)\.\d+$/
-```
-
-<details><summary>Examples</summary>
-
-| Input | Match |
-|:------|:-----:|
-| `-1.5` | ✅ |
-| `-0.123` | ✅ |
-| `1.5` | ❌ |
-| `-1` | ❌ |
-
-</details>
-
-<sub>Last updated: 2026-04-09</sub>
-
----
-
-[**`decimal`**](./src/regexen/math/decimal.ts) — `✅ '1.5'` — Matches any decimal number including negative (no leading zeros except before the dot) *(Enforces beginning and end of string)*
+[**`any`**](./src/regexen/math/decimal/any.ts) — `✅ '1.5'` — Matches any decimal number including negative (no leading zeros except before the dot) *(Enforces beginning and end of string)*
 
 ```regex
 /^-?(?:0|[1-9]\d*)\.\d+$/
@@ -456,21 +413,20 @@ That's it
 
 ---
 
-[**`positiveInteger`**](./src/regexen/math/integer.ts) — `✅ '1'` — Matches a positive integer (greater than zero, no leading zeros) *(Enforces beginning and end of string)*
+[**`negative`**](./src/regexen/math/decimal/negative.ts) — `✅ '-1.5'` — Matches a negative decimal number (no leading zeros except before the dot) *(Enforces beginning and end of string)*
 
 ```regex
-/^[1-9]\d*$/
+/^-(?:0|[1-9]\d*)\.\d+$/
 ```
 
 <details><summary>Examples</summary>
 
 | Input | Match |
 |:------|:-----:|
-| `1` | ✅ |
-| `123` | ✅ |
-| `0` | ❌ |
+| `-1.5` | ✅ |
+| `-0.123` | ✅ |
+| `1.5` | ❌ |
 | `-1` | ❌ |
-| `01` | ❌ |
 
 </details>
 
@@ -478,7 +434,51 @@ That's it
 
 ---
 
-[**`negativeInteger`**](./src/regexen/math/integer.ts) — `✅ '-1'` — Matches a negative integer (less than zero, no leading zeros) *(Enforces beginning and end of string)*
+[**`positive`**](./src/regexen/math/decimal/positive.ts) — `✅ '1.5'` — Matches a positive decimal number (no leading zeros except before the dot) *(Enforces beginning and end of string)*
+
+```regex
+/^(?:0|[1-9]\d*)\.\d+$/
+```
+
+<details><summary>Examples</summary>
+
+| Input | Match |
+|:------|:-----:|
+| `1.5` | ✅ |
+| `0.123` | ✅ |
+| `123.456` | ✅ |
+| `-1.5` | ❌ |
+| `1` | ❌ |
+
+</details>
+
+<sub>Last updated: 2026-04-09</sub>
+
+### Math / Integer
+
+[**`any`**](./src/regexen/math/integer/any.ts) — `✅ '0'` — Matches any integer including zero (no leading zeros except for zero itself) *(Enforces beginning and end of string)*
+
+```regex
+/^(?:0|-?[1-9]\d*)$/
+```
+
+<details><summary>Examples</summary>
+
+| Input | Match |
+|:------|:-----:|
+| `0` | ✅ |
+| `123` | ✅ |
+| `-456` | ✅ |
+| `01` | ❌ |
+| `1.5` | ❌ |
+
+</details>
+
+<sub>Last updated: 2026-04-09</sub>
+
+---
+
+[**`negative`**](./src/regexen/math/integer/negative.ts) — `✅ '-1'` — Matches a negative integer (less than zero, no leading zeros) *(Enforces beginning and end of string)*
 
 ```regex
 /^-[1-9]\d*$/
@@ -500,21 +500,21 @@ That's it
 
 ---
 
-[**`integer`**](./src/regexen/math/integer.ts) — `✅ '0'` — Matches any integer including zero (no leading zeros except for zero itself) *(Enforces beginning and end of string)*
+[**`positive`**](./src/regexen/math/integer/positive.ts) — `✅ '1'` — Matches a positive integer (greater than zero, no leading zeros) *(Enforces beginning and end of string)*
 
 ```regex
-/^(?:0|-?[1-9]\d*)$/
+/^[1-9]\d*$/
 ```
 
 <details><summary>Examples</summary>
 
 | Input | Match |
 |:------|:-----:|
-| `0` | ✅ |
+| `1` | ✅ |
 | `123` | ✅ |
-| `-456` | ✅ |
+| `0` | ❌ |
+| `-1` | ❌ |
 | `01` | ❌ |
-| `1.5` | ❌ |
 
 </details>
 
@@ -1650,7 +1650,7 @@ That's it
 
 ### Countries / BR / Financial / Bank-account
 
-[**`bankAccountBancoC6`**](./src/regexen/countries/br/financial/bank-account/banco-c6.ts) — `✅ '1234 1234567-8'` — Matches a Banco C6 account format: Agencia XXXX | Conta XXXXXXX-D *(Enforces beginning and end of string)*
+[**`bancoC6`**](./src/regexen/countries/br/financial/bank-account/banco-c6.ts) — `✅ '1234 1234567-8'` — Matches a Banco C6 account format: Agencia XXXX | Conta XXXXXXX-D *(Enforces beginning and end of string)*
 
 ```regex
 /^\d{4}\s\d{7}-[\dX]$/
@@ -1669,7 +1669,7 @@ That's it
 
 ---
 
-[**`bankAccountBancoDoBrasil`**](./src/regexen/countries/br/financial/bank-account/banco-do-brasil.ts) — `✅ '1234-5 12345678-9'` — Matches a Banco do Brasil account format: Agencia XXXX-D | Conta XXXXXXXX-D *(Enforces beginning and end of string)*
+[**`bancoDoBrasil`**](./src/regexen/countries/br/financial/bank-account/banco-do-brasil.ts) — `✅ '1234-5 12345678-9'` — Matches a Banco do Brasil account format: Agencia XXXX-D | Conta XXXXXXXX-D *(Enforces beginning and end of string)*
 
 ```regex
 /^\d{4}-[\dX]\s\d{8}-[\dX]$/
@@ -1688,7 +1688,7 @@ That's it
 
 ---
 
-[**`bankAccountBancoOriginal`**](./src/regexen/countries/br/financial/bank-account/banco-original.ts) — `✅ '1234 1234567-8'` — Matches a Banco Original account format: Agencia XXXX | Conta XXXXXXX-D *(Enforces beginning and end of string)*
+[**`bancoOriginal`**](./src/regexen/countries/br/financial/bank-account/banco-original.ts) — `✅ '1234 1234567-8'` — Matches a Banco Original account format: Agencia XXXX | Conta XXXXXXX-D *(Enforces beginning and end of string)*
 
 ```regex
 /^\d{4}\s\d{7}-[\dX]$/
@@ -1707,7 +1707,7 @@ That's it
 
 ---
 
-[**`bankAccountBanrisul`**](./src/regexen/countries/br/financial/bank-account/banrisul.ts) — `✅ '1234 123456789-0'` — Matches a Banrisul account format: Agencia XXXX | Conta XXXXXXXXX-D *(Enforces beginning and end of string)*
+[**`banrisul`**](./src/regexen/countries/br/financial/bank-account/banrisul.ts) — `✅ '1234 123456789-0'` — Matches a Banrisul account format: Agencia XXXX | Conta XXXXXXXXX-D *(Enforces beginning and end of string)*
 
 ```regex
 /^\d{4}\s\d{9}-[\dX]$/
@@ -1726,7 +1726,7 @@ That's it
 
 ---
 
-[**`bankAccountBradesco`**](./src/regexen/countries/br/financial/bank-account/bradesco.ts) — `✅ '1234-5 1234567-8'` — Matches a Bradesco account format: Agencia XXXX-D | Conta XXXXXXX-D *(Enforces beginning and end of string)*
+[**`bradesco`**](./src/regexen/countries/br/financial/bank-account/bradesco.ts) — `✅ '1234-5 1234567-8'` — Matches a Bradesco account format: Agencia XXXX-D | Conta XXXXXXX-D *(Enforces beginning and end of string)*
 
 ```regex
 /^\d{4}-[\dX]\s\d{7}-[\dX]$/
@@ -1745,7 +1745,7 @@ That's it
 
 ---
 
-[**`bankAccountBrb`**](./src/regexen/countries/br/financial/bank-account/brb.ts) — `✅ '1234 123456789-0'` — Matches a BRB account format: Agencia XXXX | Conta XXXXXXXXX-D *(Enforces beginning and end of string)*
+[**`brb`**](./src/regexen/countries/br/financial/bank-account/brb.ts) — `✅ '1234 123456789-0'` — Matches a BRB account format: Agencia XXXX | Conta XXXXXXXXX-D *(Enforces beginning and end of string)*
 
 ```regex
 /^\d{4}\s\d{9}-[\dX]$/
@@ -1764,7 +1764,7 @@ That's it
 
 ---
 
-[**`bankAccountBs2`**](./src/regexen/countries/br/financial/bank-account/bs2.ts) — `✅ '1234 123456-7'` — Matches a BS2 account format: Agencia XXXX | Conta XXXXXX-D *(Enforces beginning and end of string)*
+[**`bs2`**](./src/regexen/countries/br/financial/bank-account/bs2.ts) — `✅ '1234 123456-7'` — Matches a BS2 account format: Agencia XXXX | Conta XXXXXX-D *(Enforces beginning and end of string)*
 
 ```regex
 /^\d{4}\s\d{6}-[\dX]$/
@@ -1783,7 +1783,7 @@ That's it
 
 ---
 
-[**`bankAccountCaixaEconomicaNew`**](./src/regexen/countries/br/financial/bank-account/caixa-economica-new.ts) — `✅ '1234 0013123456789-0'` — Matches a Caixa Economica new account format: Agencia XXXX | Conta XXXXXXXXXXXXXX-D (4-digit operation code + 9-digit account + check digit) *(Enforces beginning and end of string)*
+[**`caixaEconomicaNew`**](./src/regexen/countries/br/financial/bank-account/caixa-economica-new.ts) — `✅ '1234 0013123456789-0'` — Matches a Caixa Economica new account format: Agencia XXXX | Conta XXXXXXXXXXXXXX-D (4-digit operation code + 9-digit account + check digit) *(Enforces beginning and end of string)*
 
 ```regex
 /^\d{4}\s\d{4}\d{9}-[\dX]$/
@@ -1802,7 +1802,7 @@ That's it
 
 ---
 
-[**`bankAccountCaixaEconomica`**](./src/regexen/countries/br/financial/bank-account/caixa-economica.ts) — `✅ '1234 00112345678-9'` — Matches a Caixa Economica account format: Agencia XXXX | Conta XXXXXXXXXXX-D (3-digit operation code + 8-digit account + check digit) *(Enforces beginning and end of string)*
+[**`caixaEconomica`**](./src/regexen/countries/br/financial/bank-account/caixa-economica.ts) — `✅ '1234 00112345678-9'` — Matches a Caixa Economica account format: Agencia XXXX | Conta XXXXXXXXXXX-D (3-digit operation code + 8-digit account + check digit) *(Enforces beginning and end of string)*
 
 ```regex
 /^\d{4}\s\d{3}\d{8}-[\dX]$/
@@ -1821,7 +1821,7 @@ That's it
 
 ---
 
-[**`bankAccountCora`**](./src/regexen/countries/br/financial/bank-account/cora.ts) — `✅ '1234 1234567-8'` — Matches a Cora account format: Agencia XXXX | Conta XXXXXXX-D *(Enforces beginning and end of string)*
+[**`cora`**](./src/regexen/countries/br/financial/bank-account/cora.ts) — `✅ '1234 1234567-8'` — Matches a Cora account format: Agencia XXXX | Conta XXXXXXX-D *(Enforces beginning and end of string)*
 
 ```regex
 /^\d{4}\s\d{7}-[\dX]$/
@@ -1840,7 +1840,7 @@ That's it
 
 ---
 
-[**`bankAccountInter`**](./src/regexen/countries/br/financial/bank-account/inter.ts) — `✅ '1234 123456789-0'` — Matches an Inter account format: Agencia XXXX | Conta XXXXXXXXX-D *(Enforces beginning and end of string)*
+[**`inter`**](./src/regexen/countries/br/financial/bank-account/inter.ts) — `✅ '1234 123456789-0'` — Matches an Inter account format: Agencia XXXX | Conta XXXXXXXXX-D *(Enforces beginning and end of string)*
 
 ```regex
 /^\d{4}\s\d{9}-[\dX]$/
@@ -1859,7 +1859,7 @@ That's it
 
 ---
 
-[**`bankAccountItau`**](./src/regexen/countries/br/financial/bank-account/itau.ts) — `✅ '1234 12345-6'` — Matches an Itau account format: Agencia XXXX | Conta XXXXX-D *(Enforces beginning and end of string)*
+[**`itau`**](./src/regexen/countries/br/financial/bank-account/itau.ts) — `✅ '1234 12345-6'` — Matches an Itau account format: Agencia XXXX | Conta XXXXX-D *(Enforces beginning and end of string)*
 
 ```regex
 /^\d{4}\s\d{5}-[\dX]$/
@@ -1878,7 +1878,7 @@ That's it
 
 ---
 
-[**`bankAccountMercadoPago`**](./src/regexen/countries/br/financial/bank-account/mercado-pago.ts) — `✅ '1234 1234567890123-4'` — Matches a Mercado Pago account format: Agencia XXXX | Conta XXXXXXXXXXXXX-D *(Enforces beginning and end of string)*
+[**`mercadoPago`**](./src/regexen/countries/br/financial/bank-account/mercado-pago.ts) — `✅ '1234 1234567890123-4'` — Matches a Mercado Pago account format: Agencia XXXX | Conta XXXXXXXXXXXXX-D *(Enforces beginning and end of string)*
 
 ```regex
 /^\d{4}\s\d{13}-[\dX]$/
@@ -1897,7 +1897,7 @@ That's it
 
 ---
 
-[**`bankAccountNeon`**](./src/regexen/countries/br/financial/bank-account/neon.ts) — `✅ '1234 123456789-0'` — Matches a Neon account format: Agencia XXXX | Conta XXXXXXXXX-D *(Enforces beginning and end of string)*
+[**`neon`**](./src/regexen/countries/br/financial/bank-account/neon.ts) — `✅ '1234 123456789-0'` — Matches a Neon account format: Agencia XXXX | Conta XXXXXXXXX-D *(Enforces beginning and end of string)*
 
 ```regex
 /^\d{4}\s\d{9}-[\dX]$/
@@ -1916,7 +1916,7 @@ That's it
 
 ---
 
-[**`bankAccountNext`**](./src/regexen/countries/br/financial/bank-account/next.ts) — `✅ '1234 1234567-8'` — Matches a Next account format: Agencia XXXX | Conta XXXXXXX-D *(Enforces beginning and end of string)*
+[**`next`**](./src/regexen/countries/br/financial/bank-account/next.ts) — `✅ '1234 1234567-8'` — Matches a Next account format: Agencia XXXX | Conta XXXXXXX-D *(Enforces beginning and end of string)*
 
 ```regex
 /^\d{4}\s\d{7}-[\dX]$/
@@ -1935,7 +1935,7 @@ That's it
 
 ---
 
-[**`bankAccountNubank`**](./src/regexen/countries/br/financial/bank-account/nubank.ts) — `✅ '1234 1234567890-1'` — Matches a Nubank account format: Agencia XXXX | Conta XXXXXXXXXX-D *(Enforces beginning and end of string)*
+[**`nubank`**](./src/regexen/countries/br/financial/bank-account/nubank.ts) — `✅ '1234 1234567890-1'` — Matches a Nubank account format: Agencia XXXX | Conta XXXXXXXXXX-D *(Enforces beginning and end of string)*
 
 ```regex
 /^\d{4}\s\d{10}-[\dX]$/
@@ -1954,7 +1954,7 @@ That's it
 
 ---
 
-[**`bankAccountPagseguro`**](./src/regexen/countries/br/financial/bank-account/pagseguro.ts) — `✅ '1234 12345678-9'` — Matches a PagSeguro account format: Agencia XXXX | Conta XXXXXXXX-D *(Enforces beginning and end of string)*
+[**`pagseguro`**](./src/regexen/countries/br/financial/bank-account/pagseguro.ts) — `✅ '1234 12345678-9'` — Matches a PagSeguro account format: Agencia XXXX | Conta XXXXXXXX-D *(Enforces beginning and end of string)*
 
 ```regex
 /^\d{4}\s\d{8}-[\dX]$/
@@ -1973,7 +1973,7 @@ That's it
 
 ---
 
-[**`bankAccountPjbank`**](./src/regexen/countries/br/financial/bank-account/pjbank.ts) — `✅ '1234 1234567890-1'` — Matches a PJBank account format: Agencia XXXX | Conta XXXXXXXXXX-D *(Enforces beginning and end of string)*
+[**`pjbank`**](./src/regexen/countries/br/financial/bank-account/pjbank.ts) — `✅ '1234 1234567890-1'` — Matches a PJBank account format: Agencia XXXX | Conta XXXXXXXXXX-D *(Enforces beginning and end of string)*
 
 ```regex
 /^\d{4}\s\d{10}-[\dX]$/
@@ -1992,7 +1992,7 @@ That's it
 
 ---
 
-[**`bankAccountSafra`**](./src/regexen/countries/br/financial/bank-account/safra.ts) — `✅ '1234 12345678-9'` — Matches a Safra account format: Agencia XXXX | Conta XXXXXXXX-D *(Enforces beginning and end of string)*
+[**`safra`**](./src/regexen/countries/br/financial/bank-account/safra.ts) — `✅ '1234 12345678-9'` — Matches a Safra account format: Agencia XXXX | Conta XXXXXXXX-D *(Enforces beginning and end of string)*
 
 ```regex
 /^\d{4}\s\d{8}-[\dX]$/
@@ -2011,7 +2011,7 @@ That's it
 
 ---
 
-[**`bankAccountSantander`**](./src/regexen/countries/br/financial/bank-account/santander.ts) — `✅ '1234 12345678-9'` — Matches a Santander account format: Agencia XXXX | Conta XXXXXXXX-D *(Enforces beginning and end of string)*
+[**`santander`**](./src/regexen/countries/br/financial/bank-account/santander.ts) — `✅ '1234 12345678-9'` — Matches a Santander account format: Agencia XXXX | Conta XXXXXXXX-D *(Enforces beginning and end of string)*
 
 ```regex
 /^\d{4}\s\d{8}-[\dX]$/
@@ -2030,7 +2030,7 @@ That's it
 
 ---
 
-[**`bankAccountSicoob`**](./src/regexen/countries/br/financial/bank-account/sicoob.ts) — `✅ '1234 123456789-0'` — Matches a Sicoob account format: Agencia XXXX | Conta XXXXXXXXX-D *(Enforces beginning and end of string)*
+[**`sicoob`**](./src/regexen/countries/br/financial/bank-account/sicoob.ts) — `✅ '1234 123456789-0'` — Matches a Sicoob account format: Agencia XXXX | Conta XXXXXXXXX-D *(Enforces beginning and end of string)*
 
 ```regex
 /^\d{4}\s\d{9}-[\dX]$/
@@ -2049,7 +2049,7 @@ That's it
 
 ---
 
-[**`bankAccountSicredi`**](./src/regexen/countries/br/financial/bank-account/sicredi.ts) — `✅ '1234 123456'` — Matches a Sicredi account format: Agencia XXXX | Conta XXXXXX (no check digit) *(Enforces beginning and end of string)*
+[**`sicredi`**](./src/regexen/countries/br/financial/bank-account/sicredi.ts) — `✅ '1234 123456'` — Matches a Sicredi account format: Agencia XXXX | Conta XXXXXX (no check digit) *(Enforces beginning and end of string)*
 
 ```regex
 /^\d{4}\s\d{6}$/
@@ -2068,7 +2068,7 @@ That's it
 
 ---
 
-[**`bankAccountStone`**](./src/regexen/countries/br/financial/bank-account/stone.ts) — `✅ '1234 1234567-8'` — Matches a Stone account format: Agencia XXXX | Conta XXXXXXX-D *(Enforces beginning and end of string)*
+[**`stone`**](./src/regexen/countries/br/financial/bank-account/stone.ts) — `✅ '1234 1234567-8'` — Matches a Stone account format: Agencia XXXX | Conta XXXXXXX-D *(Enforces beginning and end of string)*
 
 ```regex
 /^\d{4}\s\d{7}-[\dX]$/
@@ -2087,7 +2087,7 @@ That's it
 
 ---
 
-[**`bankAccountUnicred`**](./src/regexen/countries/br/financial/bank-account/unicred.ts) — `✅ '1234 12345678-9'` — Matches a Unicred account format: Agencia XXXX | Conta XXXXXXXX-D *(Enforces beginning and end of string)*
+[**`unicred`**](./src/regexen/countries/br/financial/bank-account/unicred.ts) — `✅ '1234 12345678-9'` — Matches a Unicred account format: Agencia XXXX | Conta XXXXXXXX-D *(Enforces beginning and end of string)*
 
 ```regex
 /^\d{4}\s\d{8}-[\dX]$/
@@ -2106,7 +2106,7 @@ That's it
 
 ---
 
-[**`bankAccountViaCredi`**](./src/regexen/countries/br/financial/bank-account/via-credi.ts) — `✅ '1234 12345678901-2'` — Matches a ViaCredi account format: Agencia XXXX | Conta XXXXXXXXXXX-D *(Enforces beginning and end of string)*
+[**`viaCredi`**](./src/regexen/countries/br/financial/bank-account/via-credi.ts) — `✅ '1234 12345678901-2'` — Matches a ViaCredi account format: Agencia XXXX | Conta XXXXXXXXXXX-D *(Enforces beginning and end of string)*
 
 ```regex
 /^\d{4}\s\d{11}-[\dX]$/
