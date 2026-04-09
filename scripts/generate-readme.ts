@@ -194,7 +194,7 @@ const sortedGroups = [...grouped.entries()].sort((a, b) => {
 });
 
 for (const [category, categoryEntries] of sortedGroups) {
-  dynamicLines.push(`## ${formatCategoryTitle(category)}`);
+  dynamicLines.push(`### ${formatCategoryTitle(category)}`);
   dynamicLines.push('');
 
   for (let i = 0; i < categoryEntries.length; i++) {
