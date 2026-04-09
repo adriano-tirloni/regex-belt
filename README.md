@@ -265,7 +265,28 @@ That's it
 
 ### Datetime / Time-12h
 
-[**`hh`**](./src/regexen/datetime/time-12h/hh.ts) — `✅ '12 PM'` — Matches a 12-hour hour in HH AM/PM format *(Enforces beginning and end of string)*
+[**`hh`**](./src/regexen/datetime/time-12h/hh.ts) — `✅ '12'` — Matches a 12-hour hour in HH format without meridiem *(Enforces beginning and end of string)*
+
+```regex
+/^(?:0?[1-9]|1[0-2])$/
+```
+
+<details><summary>Examples</summary>
+
+| Input | Match |
+|:------|:-----:|
+| `12` | ✅ |
+| `1` | ✅ |
+| `0` | ❌ |
+| `12 PM` | ❌ |
+
+</details>
+
+<sub>Last updated: 2026-04-09</sub>
+
+---
+
+[**`hhAMPM`**](./src/regexen/datetime/time-12h/hhAMPM.ts) — `✅ '12 PM'` — Matches a 12-hour hour in HH AM/PM format *(Enforces beginning and end of string)*
 
 ```regex
 /^(?:0?[1-9]|1[0-2])\s?[AaPp][Mm]$/
@@ -286,7 +307,28 @@ That's it
 
 ---
 
-[**`hhmm`**](./src/regexen/datetime/time-12h/hhmm.ts) — `✅ '12:59 PM'` — Matches a 12-hour time in HH:MM AM/PM format *(Enforces beginning and end of string)*
+[**`hhmm`**](./src/regexen/datetime/time-12h/hhmm.ts) — `✅ '12:59'` — Matches a 12-hour time in HH:MM format without meridiem *(Enforces beginning and end of string)*
+
+```regex
+/^(?:0?[1-9]|1[0-2]):[0-5]\d$/
+```
+
+<details><summary>Examples</summary>
+
+| Input | Match |
+|:------|:-----:|
+| `12:59` | ✅ |
+| `01:00` | ✅ |
+| `00:00` | ❌ |
+| `12:59 PM` | ❌ |
+
+</details>
+
+<sub>Last updated: 2026-04-09</sub>
+
+---
+
+[**`hhmmAMPM`**](./src/regexen/datetime/time-12h/hhmmAMPM.ts) — `✅ '12:59 PM'` — Matches a 12-hour time in HH:MM AM/PM format *(Enforces beginning and end of string)*
 
 ```regex
 /^(?:0?[1-9]|1[0-2]):[0-5]\d\s?[AaPp][Mm]$/
@@ -307,7 +349,28 @@ That's it
 
 ---
 
-[**`hhmmss`**](./src/regexen/datetime/time-12h/hhmmss.ts) — `✅ '12:59:59 PM'` — Matches a 12-hour time in HH:MM:SS AM/PM format *(Enforces beginning and end of string)*
+[**`hhmmss`**](./src/regexen/datetime/time-12h/hhmmss.ts) — `✅ '12:59:59'` — Matches a 12-hour time in HH:MM:SS format without meridiem *(Enforces beginning and end of string)*
+
+```regex
+/^(?:0?[1-9]|1[0-2]):[0-5]\d:[0-5]\d$/
+```
+
+<details><summary>Examples</summary>
+
+| Input | Match |
+|:------|:-----:|
+| `12:59:59` | ✅ |
+| `01:00:00` | ✅ |
+| `00:00:00` | ❌ |
+| `12:59:59 PM` | ❌ |
+
+</details>
+
+<sub>Last updated: 2026-04-09</sub>
+
+---
+
+[**`hhmmssAMPM`**](./src/regexen/datetime/time-12h/hhmmssAMPM.ts) — `✅ '12:59:59 PM'` — Matches a 12-hour time in HH:MM:SS AM/PM format *(Enforces beginning and end of string)*
 
 ```regex
 /^(?:0?[1-9]|1[0-2]):[0-5]\d:[0-5]\d\s?[AaPp][Mm]$/
@@ -567,7 +630,7 @@ That's it
 
 ### Network / URL
 
-[**`urlCommonPublicDomainOnly`**](./src/regexen/network/url/common-public-domain-only.ts) — `✅ 'https://example.com'` — Matches a public HTTP/HTTPS URL with only the domain Format: scheme://host *(Enforces beginning and end of string)*
+[**`commonPublicDomainOnly`**](./src/regexen/network/url/common-public-domain-only.ts) — `✅ 'https://example.com'` — Matches a public HTTP/HTTPS URL with only the domain Format: scheme://host *(Enforces beginning and end of string)*
 
 ```regex
 /^https?:\/\/(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z]{2,}$/
@@ -589,7 +652,7 @@ That's it
 
 ---
 
-[**`urlCommonPublic`**](./src/regexen/network/url/common-public.ts) — `✅ 'https://example.com/path?q=1'` — Matches a common public HTTP/HTTPS URL without credentials Format: scheme://host[:port][/path][?query][#fragment] *(Enforces beginning and end of string)*
+[**`commonPublic`**](./src/regexen/network/url/common-public.ts) — `✅ 'https://example.com/path?q=1'` — Matches a common public HTTP/HTTPS URL without credentials Format: scheme://host[:port][/path][?query][#fragment] *(Enforces beginning and end of string)*
 
 ```regex
 /^https?:\/\/(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z]{2,}(?::\d{1,5})?(?:\/[^\s?#]*)?(?:\?[^\s#]*)?(?:#[^\s]*)?$/
@@ -610,7 +673,7 @@ That's it
 
 ---
 
-[**`urlFtp`**](./src/regexen/network/url/ftp.ts) — `✅ 'ftp://files.example.com'` — Matches an FTP URL with all optional components Format: ftp://[credentials@]host[:port][/path][?query][#fragment] *(Enforces beginning and end of string)*
+[**`ftp`**](./src/regexen/network/url/ftp.ts) — `✅ 'ftp://files.example.com'` — Matches an FTP URL with all optional components Format: ftp://[credentials@]host[:port][/path][?query][#fragment] *(Enforces beginning and end of string)*
 
 ```regex
 /^ftp:\/\/(?:(?:[a-zA-Z0-9._~!{{GENERATED_CONTENT}}'()*+,;=:%-]+@))?(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z]{2,}(?::\d{1,5})?(?:\/[^\s?#]*)?(?:\?[^\s#]*)?(?:#[^\s]*)?$/
@@ -631,7 +694,7 @@ That's it
 
 ---
 
-[**`urlFull`**](./src/regexen/network/url/full.ts) — `✅ 'https://user:pass@example.com:8080/path?q=1#frag'` — Matches a full URL with all optional components Format: scheme://[credentials@]host[:port][/path][?query][#fragment] *(Enforces beginning and end of string)*
+[**`full`**](./src/regexen/network/url/full.ts) — `✅ 'https://user:pass@example.com:8080/path?q=1#frag'` — Matches a full URL with all optional components Format: scheme://[credentials@]host[:port][/path][?query][#fragment] *(Enforces beginning and end of string)*
 
 ```regex
 /^(?:https?|ftp):\/\/(?:(?:[a-zA-Z0-9._~!{{GENERATED_CONTENT}}'()*+,;=:%-]+@))?(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z]{2,}(?::\d{1,5})?(?:\/[^\s?#]*)?(?:\?[^\s#]*)?(?:#[^\s]*)?$/
@@ -653,7 +716,7 @@ That's it
 
 ---
 
-[**`urlHttp`**](./src/regexen/network/url/http.ts) — `✅ 'http://example.com'` — Matches an HTTP URL with all optional components Format: http://[credentials@]host[:port][/path][?query][#fragment] *(Enforces beginning and end of string)*
+[**`http`**](./src/regexen/network/url/http.ts) — `✅ 'http://example.com'` — Matches an HTTP URL with all optional components Format: http://[credentials@]host[:port][/path][?query][#fragment] *(Enforces beginning and end of string)*
 
 ```regex
 /^http:\/\/(?:(?:[a-zA-Z0-9._~!{{GENERATED_CONTENT}}'()*+,;=:%-]+@))?(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z]{2,}(?::\d{1,5})?(?:\/[^\s?#]*)?(?:\?[^\s#]*)?(?:#[^\s]*)?$/
@@ -674,7 +737,7 @@ That's it
 
 ---
 
-[**`urlHttpsDomainOnly`**](./src/regexen/network/url/https-domain-only.ts) — `✅ 'https://example.com'` — Matches an HTTPS URL with only the domain Format: https://host *(Enforces beginning and end of string)*
+[**`httpsDomainOnly`**](./src/regexen/network/url/https-domain-only.ts) — `✅ 'https://example.com'` — Matches an HTTPS URL with only the domain Format: https://host *(Enforces beginning and end of string)*
 
 ```regex
 /^https:\/\/(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z]{2,}$/
@@ -696,7 +759,7 @@ That's it
 
 ---
 
-[**`urlHttps`**](./src/regexen/network/url/https.ts) — `✅ 'https://example.com'` — Matches an HTTPS URL with all optional components Format: https://[credentials@]host[:port][/path][?query][#fragment] *(Enforces beginning and end of string)*
+[**`https`**](./src/regexen/network/url/https.ts) — `✅ 'https://example.com'` — Matches an HTTPS URL with all optional components Format: https://[credentials@]host[:port][/path][?query][#fragment] *(Enforces beginning and end of string)*
 
 ```regex
 /^https:\/\/(?:(?:[a-zA-Z0-9._~!{{GENERATED_CONTENT}}'()*+,;=:%-]+@))?(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z]{2,}(?::\d{1,5})?(?:\/[^\s?#]*)?(?:\?[^\s#]*)?(?:#[^\s]*)?$/
@@ -717,7 +780,7 @@ That's it
 
 ---
 
-[**`urlNoCredentials`**](./src/regexen/network/url/no-credentials.ts) — `✅ 'https://example.com:8080/path?q=1'` — Matches a URL without credentials Format: scheme://host[:port][/path][?query][#fragment] *(Enforces beginning and end of string)*
+[**`noCredentials`**](./src/regexen/network/url/no-credentials.ts) — `✅ 'https://example.com:8080/path?q=1'` — Matches a URL without credentials Format: scheme://host[:port][/path][?query][#fragment] *(Enforces beginning and end of string)*
 
 ```regex
 /^(?:https?|ftp):\/\/(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z]{2,}(?::\d{1,5})?(?:\/[^\s?#]*)?(?:\?[^\s#]*)?(?:#[^\s]*)?$/
@@ -737,7 +800,7 @@ That's it
 
 ---
 
-[**`urlNoPathAndQuery`**](./src/regexen/network/url/no-path-and-query.ts) — `✅ 'https://example.com'` — Matches a URL without path, query, or fragment components Format: scheme://[credentials@]host[:port] *(Enforces beginning and end of string)*
+[**`noPathAndQuery`**](./src/regexen/network/url/no-path-and-query.ts) — `✅ 'https://example.com'` — Matches a URL without path, query, or fragment components Format: scheme://[credentials@]host[:port] *(Enforces beginning and end of string)*
 
 ```regex
 /^(?:https?|ftp):\/\/(?:(?:[a-zA-Z0-9._~!{{GENERATED_CONTENT}}'()*+,;=:%-]+@))?(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z]{2,}(?::\d{1,5})?$/
@@ -758,7 +821,7 @@ That's it
 
 ---
 
-[**`urlNoPort`**](./src/regexen/network/url/no-port.ts) — `✅ 'https://user:pass@example.com/path'` — Matches a URL without a port component Format: scheme://[credentials@]host[/path][?query][#fragment] *(Enforces beginning and end of string)*
+[**`noPort`**](./src/regexen/network/url/no-port.ts) — `✅ 'https://user:pass@example.com/path'` — Matches a URL without a port component Format: scheme://[credentials@]host[/path][?query][#fragment] *(Enforces beginning and end of string)*
 
 ```regex
 /^(?:https?|ftp):\/\/(?:(?:[a-zA-Z0-9._~!{{GENERATED_CONTENT}}'()*+,;=:%-]+@))?(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z]{2,}(?:\/[^\s?#]*)?(?:\?[^\s#]*)?(?:#[^\s]*)?$/
@@ -778,7 +841,7 @@ That's it
 
 ---
 
-[**`urlSlug`**](./src/regexen/network/url/slug.ts) — `✅ 'my-page-title'` — Matches a valid URL slug (lowercase alphanumeric with hyphens) *(Enforces beginning and end of string)*
+[**`slug`**](./src/regexen/network/url/slug.ts) — `✅ 'my-page-title'` — Matches a valid URL slug (lowercase alphanumeric with hyphens) *(Enforces beginning and end of string)*
 
 ```regex
 /^[a-z0-9-]+$/
@@ -888,6 +951,25 @@ That's it
 
 ### Countries / BR / Codes
 
+[**`chaveNfe`**](./src/regexen/countries/br/codes/chave-nfe.ts) — `✅ '35210612345678000195550010001234561123456784'` — Matches a Brazilian NFe (Nota Fiscal Eletronica) access key as 44 consecutive digits *(Enforces beginning and end of string)*
+
+```regex
+/^\d{44}$/
+```
+
+<details><summary>Examples</summary>
+
+| Input | Match |
+|:------|:-----:|
+| `35210612345678000195550010001234561123456784` | ✅ |
+| `3521061234567800019555001000123456112345678` | ❌ |
+
+</details>
+
+<sub>Last updated: 2026-04-09</sub>
+
+---
+
 [**`cnes`**](./src/regexen/countries/br/codes/cnes.ts) — `✅ '1234567'` — Matches a Brazilian CNES (Cadastro Nacional de Estabelecimentos de Saude) code as 7 digits *(Enforces beginning and end of string)*
 
 ```regex
@@ -900,6 +982,25 @@ That's it
 |:------|:-----:|
 | `1234567` | ✅ |
 | `123456` | ❌ |
+
+</details>
+
+<sub>Last updated: 2026-04-09</sub>
+
+---
+
+[**`codigoIbge`**](./src/regexen/countries/br/codes/codigo-ibge.ts) — `✅ '3550308'` — Matches a Brazilian IBGE municipality code as 7 consecutive digits *(Enforces beginning and end of string)*
+
+```regex
+/^\d{7}$/
+```
+
+<details><summary>Examples</summary>
+
+| Input | Match |
+|:------|:-----:|
+| `3550308` | ✅ |
+| `355030` | ❌ |
 
 </details>
 
@@ -945,25 +1046,6 @@ That's it
 
 ---
 
-[**`ibgeCode`**](./src/regexen/countries/br/codes/ibge-code.ts) — `✅ '3550308'` — Matches a Brazilian IBGE municipality code as 7 consecutive digits *(Enforces beginning and end of string)*
-
-```regex
-/^\d{7}$/
-```
-
-<details><summary>Examples</summary>
-
-| Input | Match |
-|:------|:-----:|
-| `3550308` | ✅ |
-| `355030` | ❌ |
-
-</details>
-
-<sub>Last updated: 2026-04-09</sub>
-
----
-
 [**`isbn13`**](./src/regexen/countries/br/codes/isbn.ts) — `✅ '9780306406157'` — Matches an ISBN-13: prefix 978 or 979 followed by 10 digits *(Enforces beginning and end of string)*
 
 ```regex
@@ -1002,26 +1084,7 @@ That's it
 
 ---
 
-[**`nfeKey`**](./src/regexen/countries/br/codes/nfe-key.ts) — `✅ '35210612345678000195550010001234561123456784'` — Matches a Brazilian NFe (Nota Fiscal Eletronica) access key as 44 consecutive digits *(Enforces beginning and end of string)*
-
-```regex
-/^\d{44}$/
-```
-
-<details><summary>Examples</summary>
-
-| Input | Match |
-|:------|:-----:|
-| `35210612345678000195550010001234561123456784` | ✅ |
-| `3521061234567800019555001000123456112345678` | ❌ |
-
-</details>
-
-<sub>Last updated: 2026-04-09</sub>
-
----
-
-[**`professionalRegistration`**](./src/regexen/countries/br/codes/professional-registration.ts) — `✅ 'CREA123456SP'` — Matches a Brazilian professional registration number (CREA, CRO, CRC, COREN, etc.) Format: CR + 1-3 uppercase letters + optional space + 4-10 digits + optional slash or dash + 2 uppercase state letters *(Enforces beginning and end of string)*
+[**`registroProfissional`**](./src/regexen/countries/br/codes/registro-profissional.ts) — `✅ 'CREA123456SP'` — Matches a Brazilian professional registration number (CREA, CRO, CRC, COREN, etc.) Format: CR + 1-3 uppercase letters + optional space + 4-10 digits + optional slash or dash + 2 uppercase state letters *(Enforces beginning and end of string)*
 
 ```regex
 /^CR[A-Z]{1,3}\s?\d{4,10}[/-]?[A-Z]{2}$/
